@@ -26,7 +26,7 @@ st.title("🚢 Maritime Voyage Planner")
 # LOAD PORT DATASET
 # ============================================================
 
-DATASET_PATH = Path("voyage_planner_datasets_20261006.xlsx")
+DATASET_PATH = Path("data/voyage_planner_datasets.xlsx")
 
 @st.cache_data
 def load_ports():
