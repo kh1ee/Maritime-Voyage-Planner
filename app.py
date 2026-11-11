@@ -1,4 +1,5 @@
 import json
+import math
 import os
 
 import streamlit as st
@@ -101,14 +102,6 @@ st.caption("The routing engine excludes the Northwest Passage by default.")
 # ROUTING FUNCTIONS
 # ============================================================
 
-def get_coordinates(port):
-
-    return [
-        float(port["approach_longitude"]),
-        float(port["approach_latitude"])
-    ]
-
-
 def api_route(origin, destination, excluded_passages):
     payload = {**origin, **destination}
     if excluded_passages:
@@ -117,6 +110,7 @@ def api_route(origin, destination, excluded_passages):
     return SimpleNamespace(
         properties={"length": result["distance_nm"]},
         geometry=result["route_geometry"],
+        warnings=result.get("warnings", []),
     )
 
 
@@ -124,6 +118,11 @@ def request_routing_api(endpoint, payload):
     api_url = os.environ.get(
         "VOYAGE_API_URL", "https://maritime-voyage-planner.onrender.com"
     ).rstrip("/")
+    return fetch_routing_result(api_url, endpoint, payload)
+
+
+@st.cache_data(ttl=3600, max_entries=256, show_spinner="Contacting routing API…")
+def fetch_routing_result(api_url, endpoint, payload):
     request = Request(
         f"{api_url}/{endpoint}",
         data=json.dumps(payload).encode(),
@@ -131,7 +130,7 @@ def request_routing_api(endpoint, payload):
         method="POST",
     )
     try:
-        with urlopen(request, timeout=30) as response:
+        with urlopen(request, timeout=90) as response:
             result = json.load(response)
     except HTTPError as error:
         try:
@@ -141,8 +140,26 @@ def request_routing_api(endpoint, payload):
         raise ValueError(message) from error
     except (URLError, TimeoutError) as error:
         raise ValueError("Could not reach the routing API. Please try again shortly.") from error
+    except ValueError as error:
+        raise ValueError("The routing API returned unreadable data. Please try again.") from error
 
+    distance_key = "distance_nm" if endpoint == "route" else "total_distance_nm"
+    try:
+        if result["status"] != "success" or not math.isfinite(float(result[distance_key])):
+            raise ValueError
+        if endpoint == "route" and not result["route_geometry"]["coordinates"]:
+            raise ValueError
+    except (ValueError, TypeError, KeyError) as error:
+        raise ValueError("The routing API returned an incomplete route result.") from error
     return result
+
+
+def show_route_notes(*warning_groups):
+    warnings = list(dict.fromkeys(warning for group in warning_groups for warning in group))
+    if warnings:
+        with st.expander("Route notes"):
+            for warning in warnings:
+                st.write(warning)
 
 
 def route_coordinates(role, point):
@@ -214,11 +231,11 @@ def create_route_map(route, origin, destination):
 # ROUTE COMPARISON FUNCTIONS — STEP 6
 # ============================================================
 
-def calculate_comparison_route(start_coordinates, end_coordinates, restrictions_list):
+def calculate_comparison_route(origin, destination, restrictions_list):
 
     route = api_route(
-        route_coordinates("origin", start_coordinates),
-        route_coordinates("destination", end_coordinates),
+        origin,
+        destination,
         restrictions_list,
     )
 
@@ -240,7 +257,8 @@ def calculate_comparison_route(start_coordinates, end_coordinates, restrictions_
         "distance": distance,
         "hours": distance / speed,
         "days": distance / speed / 24,
-        "coordinates": coordinates
+        "coordinates": coordinates,
+        "warnings": route.warnings,
     }
 
 
@@ -374,6 +392,8 @@ def display_comparison_results(unrestricted_routes, restricted_routes):
         hide_index=True
     )
 
+    show_route_notes(*(route["warnings"] for route in unrestricted_routes + restricted_routes))
+
     return unrestricted_distance, restricted_distance
 
 
@@ -442,7 +462,6 @@ def export_voyage_results(voyage_type, voyage_mode, rows, itinerary=None,
 # VALIDATION FUNCTIONS — STEP 8A
 # ============================================================
 
-import math
 
 
 def validate_coordinates(longitude, latitude):
@@ -606,6 +625,7 @@ with alternatives_tab:
 
     if submitted:
         rows = []
+        option_notes = []
         for label, stops, passage, exclusions in alternatives:
             itinerary = [origin, *stops, destination]
             if origin == destination or origin in stops or destination in stops:
@@ -635,6 +655,7 @@ with alternatives_tab:
                 st.error(f"{label}: {error}")
                 continue
 
+            option_notes.extend(f"{label}: {warning}" for warning in result.get("warnings", []))
             rows.append({
                 "Option": label,
                 "Itinerary": " → ".join(itinerary),
@@ -646,6 +667,7 @@ with alternatives_tab:
 
         if rows:
             st.dataframe(pd.DataFrame(rows), hide_index=True, use_container_width=True)
+        show_route_notes(option_notes)
         if len(rows) == 2:
             difference = rows[1]["Distance (NM)"] - rows[0]["Distance (NM)"]
             if difference == 0:
@@ -698,6 +720,7 @@ with tab1:
 
                 st.session_state["persist_calculate_port"] = (origin_name, destination_name, float(speed), tuple(restrictions))
                 st.success("Route calculated successfully!")
+                show_route_notes(route.warnings)
 
                 col1, col2, col3 = st.columns(3)
 
@@ -772,18 +795,18 @@ with tab1:
                 origin = port_options[origin_name]
                 destination = port_options[destination_name]
 
-                start_coordinates = get_coordinates(origin)
-                end_coordinates = get_coordinates(destination)
+                origin_request = {"origin_port_id": str(origin["port_id"])}
+                destination_request = {"destination_port_id": str(destination["port_id"])}
 
                 unrestricted = calculate_comparison_route(
-                    start_coordinates,
-                    end_coordinates,
+                    origin_request,
+                    destination_request,
                     []
                 )
 
                 restricted = calculate_comparison_route(
-                    start_coordinates,
-                    end_coordinates,
+                    origin_request,
+                    destination_request,
                     restrictions
                 )
 
@@ -925,6 +948,7 @@ with tab2:
                 validate_itinerary(stops)
 
                 leg_results = []
+                leg_notes = []
                 all_coordinates = []
 
                 total_distance = 0
@@ -950,6 +974,7 @@ with tab2:
                     )
 
                     total_distance += distance
+                    leg_notes.extend(f"Leg {i + 1}: {warning}" for warning in route.warnings)
 
                     coordinates = [
                         [lat, lon]
@@ -1000,6 +1025,7 @@ with tab2:
 
                 st.session_state["persist_calculate_multi"] = (tuple(st.session_state.voyage_stops), float(speed), tuple(restrictions))
                 st.success("Multi-leg voyage calculated successfully!")
+                show_route_notes(leg_notes)
 
                 col1, col2, col3 = st.columns(3)
 
@@ -1095,18 +1121,18 @@ with tab2:
                     origin = port_options[stops[i]]
                     destination = port_options[stops[i + 1]]
 
-                    start_coordinates = get_coordinates(origin)
-                    end_coordinates = get_coordinates(destination)
+                    origin_request = {"origin_port_id": str(origin["port_id"])}
+                    destination_request = {"destination_port_id": str(destination["port_id"])}
 
                     unrestricted = calculate_comparison_route(
-                        start_coordinates,
-                        end_coordinates,
+                        origin_request,
+                        destination_request,
                         []
                     )
 
                     restricted = calculate_comparison_route(
-                        start_coordinates,
-                        end_coordinates,
+                        origin_request,
+                        destination_request,
                         restrictions
                     )
 
@@ -1249,7 +1275,6 @@ with tab3:
             ]
 
             vessel_coordinates = [float(longitude), float(latitude)]
-            destination_coordinates = get_coordinates(destination)
             route = api_route(
                 route_coordinates("origin", vessel_coordinates),
                 {"destination_port_id": str(destination["port_id"])},
@@ -1273,6 +1298,7 @@ with tab3:
             st.success(
                 "Position-to-Port route calculated successfully!"
             )
+            show_route_notes(route.warnings)
 
             # Display results
             col1, col2, col3 = st.columns(3)
@@ -1400,17 +1426,16 @@ with tab3:
                     float(latitude)
                 ]
 
-                end_coordinates = get_coordinates(destination)
 
                 unrestricted = calculate_comparison_route(
-                    start_coordinates,
-                    end_coordinates,
+                    route_coordinates("origin", start_coordinates),
+                    {"destination_port_id": str(destination["port_id"])},
                     []
                 )
 
                 restricted = calculate_comparison_route(
-                    start_coordinates,
-                    end_coordinates,
+                    route_coordinates("origin", start_coordinates),
+                    {"destination_port_id": str(destination["port_id"])},
                     restrictions
                 )
 
