@@ -113,11 +113,19 @@ def api_route(origin, destination, excluded_passages):
     payload = {**origin, **destination}
     if excluded_passages:
         payload["excluded_passage"] = [passage.upper() for passage in excluded_passages]
+    result = request_routing_api("route", payload)
+    return SimpleNamespace(
+        properties={"length": result["distance_nm"]},
+        geometry=result["route_geometry"],
+    )
+
+
+def request_routing_api(endpoint, payload):
     api_url = os.environ.get(
         "VOYAGE_API_URL", "https://maritime-voyage-planner.onrender.com"
     ).rstrip("/")
     request = Request(
-        f"{api_url}/route",
+        f"{api_url}/{endpoint}",
         data=json.dumps(payload).encode(),
         headers={"Content-Type": "application/json"},
         method="POST",
@@ -134,10 +142,7 @@ def api_route(origin, destination, excluded_passages):
     except (URLError, TimeoutError) as error:
         raise ValueError("Could not reach the routing API. Please try again shortly.") from error
 
-    return SimpleNamespace(
-        properties={"length": result["distance_nm"]},
-        geometry=result["route_geometry"],
-    )
+    return result
 
 
 def route_coordinates(role, point):
@@ -568,11 +573,87 @@ def persisted_action(action_key, signature, clicked):
 # APPLICATION TABS
 # ============================================================
 
-tab1, tab2, tab3 = st.tabs([
+tab1, tab2, tab3, alternatives_tab = st.tabs([
     "Port-to-Port",
     "Multi-Leg",
-    "Position-to-Port"
+    "Position-to-Port",
+    "Route Alternatives",
 ])
+
+with alternatives_tab:
+    st.header("Compare Route Alternatives")
+    st.caption("Use the same origin and destination for both options. Select stops in sailing order. Voyage settings apply to both options.")
+
+    with st.form("route_alternatives"):
+        origin = st.selectbox("Origin port", port_names, key="alternative_origin")
+        destination = st.selectbox("Destination port", port_names, index=1, key="alternative_destination")
+        alternatives = []
+        for label, column in zip(("Option A", "Option B"), st.columns(2)):
+            with column:
+                st.subheader(label)
+                stops = st.multiselect(f"Intermediate stops ({label})", port_names, key=f"stops_{label}")
+                passage = st.selectbox(
+                    f"Required passage ({label})", ["None", *restriction_options],
+                    help="For options without intermediate stops.",
+                    key=f"passage_{label}",
+                )
+                exclusions = st.multiselect(
+                    f"Additional exclusions ({label})", list(restriction_options),
+                    key=f"exclusions_{label}",
+                )
+                alternatives.append((label, stops, passage, exclusions))
+        submitted = st.form_submit_button("Compare Alternatives")
+
+    if submitted:
+        rows = []
+        for label, stops, passage, exclusions in alternatives:
+            itinerary = [origin, *stops, destination]
+            if origin == destination or origin in stops or destination in stops:
+                st.error(f"{label}: Choose distinct endpoints and different ports for intermediate stops.")
+                continue
+            if stops and passage != "None":
+                st.error(f"{label}: Choose a required passage or intermediate stops.")
+                continue
+
+            excluded = list(dict.fromkeys([*restrictions, *(restriction_options[item] for item in exclusions)]))
+            payload = {
+                "origin_port_id": str(port_options[origin]["port_id"]),
+                "destination_port_id": str(port_options[destination]["port_id"]),
+                "excluded_passage": [item.upper() for item in excluded],
+            }
+            if stops:
+                payload["intermediate_stops"] = [str(port_options[stop]["port_id"]) for stop in stops]
+            if passage != "None":
+                payload["required_passage"] = restriction_options[passage].upper()
+
+            try:
+                result = request_routing_api("voyage" if stops else "route", payload)
+                distance = float(result["total_distance_nm" if stops else "distance_nm"])
+                if not math.isfinite(distance) or distance <= 0:
+                    raise ValueError("The API returned an invalid route distance.")
+            except (ValueError, TypeError, KeyError) as error:
+                st.error(f"{label}: {error}")
+                continue
+
+            rows.append({
+                "Option": label,
+                "Itinerary": " → ".join(itinerary),
+                "Required passage": passage,
+                "Passages used": ", ".join(result.get("passages_used", [])),
+                "Distance (NM)": round(distance, 2),
+                "Sailing duration (days)": round(distance / speed / 24, 2),
+            })
+
+        if rows:
+            st.dataframe(pd.DataFrame(rows), hide_index=True, use_container_width=True)
+        if len(rows) == 2:
+            difference = rows[1]["Distance (NM)"] - rows[0]["Distance (NM)"]
+            if difference == 0:
+                st.metric("Distance difference", "0.00 NM", help="Both options cover the same distance.")
+            else:
+                shorter = "Option A" if difference > 0 else "Option B"
+                st.metric("Distance difference", f"{abs(difference):,.2f} NM")
+                st.caption(f"{shorter} is shorter.")
 
 
 # ============================================================
