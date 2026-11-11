@@ -79,18 +79,21 @@ speed = st.number_input(
 )
 
 restriction_options = {
-    "Automatic — No additional exclusions": [],
-    "Avoid Suez Canal": ["suez"],
-    "Avoid Panama Canal": ["panama"],
-    "Avoid Suez and Panama Canals": ["suez", "panama"]
+    "Suez Canal": "suez",
+    "Panama Canal": "panama",
+    "Strait of Gibraltar": "gibraltar",
+    "Strait of Malacca": "malacca",
+    "Cape Horn": "cape_horn",
+    "Cape of Good Hope": "cape_good_hope",
 }
 
-restriction_selection = st.selectbox(
+selected_passages = st.multiselect(
     "Passage Restrictions",
-    list(restriction_options.keys())
+    list(restriction_options),
+    placeholder="No additional exclusions",
 )
+restrictions = [restriction_options[passage] for passage in selected_passages]
 
-restrictions = restriction_options[restriction_selection]
 st.caption("The routing engine excludes the Northwest Passage by default.")
 
 
