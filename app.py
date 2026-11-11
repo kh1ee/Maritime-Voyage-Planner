@@ -1,9 +1,12 @@
 import json
+import os
 
 import streamlit as st
 import pandas as pd
 import folium
-import searoute as sr
+from types import SimpleNamespace
+from urllib.error import HTTPError, URLError
+from urllib.request import Request, urlopen
 
 from pathlib import Path
 from streamlit.components.v1 import html
@@ -26,7 +29,7 @@ st.title("🚢 Maritime Voyage Planner")
 # LOAD PORT DATASET
 # ============================================================
 
-DATASET_PATH = Path("data/voyage_planner_datasets.xlsx")
+DATASET_PATH = Path(__file__).resolve().parent / "data" / "voyage_planner_datasets.xlsx"
 
 @st.cache_data
 def load_ports():
@@ -76,13 +79,10 @@ speed = st.number_input(
 )
 
 restriction_options = {
-    "Automatic — No Restrictions": [],
+    "Automatic — No additional exclusions": [],
     "Avoid Suez Canal": ["suez"],
     "Avoid Panama Canal": ["panama"],
-    "Avoid Suez and Panama Canals": ["suez", "panama"],
-    "Avoid Suez, Panama and Northwest Passage": [
-        "suez", "panama", "northwest"
-    ]
+    "Avoid Suez and Panama Canals": ["suez", "panama"]
 }
 
 restriction_selection = st.selectbox(
@@ -91,6 +91,7 @@ restriction_selection = st.selectbox(
 )
 
 restrictions = restriction_options[restriction_selection]
+st.caption("The routing engine excludes the Northwest Passage by default.")
 
 
 # ============================================================
@@ -105,13 +106,47 @@ def get_coordinates(port):
     ]
 
 
-def calculate_route(origin, destination):
+def api_route(origin, destination, excluded_passages):
+    payload = {**origin, **destination}
+    if excluded_passages:
+        payload["excluded_passage"] = [passage.upper() for passage in excluded_passages]
+    api_url = os.environ.get(
+        "VOYAGE_API_URL", "https://maritime-voyage-planner.onrender.com"
+    ).rstrip("/")
+    request = Request(
+        f"{api_url}/route",
+        data=json.dumps(payload).encode(),
+        headers={"Content-Type": "application/json"},
+        method="POST",
+    )
+    try:
+        with urlopen(request, timeout=30) as response:
+            result = json.load(response)
+    except HTTPError as error:
+        try:
+            message = json.loads(error.read())["message"]
+        except (ValueError, KeyError, TypeError):
+            message = f"Routing API returned HTTP {error.code}."
+        raise ValueError(message) from error
+    except (URLError, TimeoutError) as error:
+        raise ValueError("Could not reach the routing API. Please try again shortly.") from error
 
-    route = sr.searoute(
-        get_coordinates(origin),
-        get_coordinates(destination),
-        units="naut",
-        restrictions=restrictions
+    return SimpleNamespace(
+        properties={"length": result["distance_nm"]},
+        geometry=result["route_geometry"],
+    )
+
+
+def route_coordinates(role, point):
+    longitude, latitude = map(float, point)
+    return {f"{role}_coordinates": {"longitude": longitude, "latitude": latitude}}
+
+
+def calculate_route(origin, destination):
+    route = api_route(
+        {"origin_port_id": str(origin["port_id"])},
+        {"destination_port_id": str(destination["port_id"])},
+        restrictions,
     )
 
     distance = float(route.properties["length"])
@@ -173,11 +208,10 @@ def create_route_map(route, origin, destination):
 
 def calculate_comparison_route(start_coordinates, end_coordinates, restrictions_list):
 
-    route = sr.searoute(
-        start_coordinates,
-        end_coordinates,
-        units="naut",
-        restrictions=restrictions_list
+    route = api_route(
+        route_coordinates("origin", start_coordinates),
+        route_coordinates("destination", end_coordinates),
+        restrictions_list,
     )
 
     distance = float(route.properties["length"])
@@ -1130,22 +1164,12 @@ with tab3:
                 position_destination_name
             ]
 
-            # searoute requires [longitude, latitude]
-            vessel_coordinates = [
-                float(longitude),
-                float(latitude)
-            ]
-
-            destination_coordinates = get_coordinates(
-                destination
-            )
-
-            # Calculate maritime route
-            route = sr.searoute(
-                vessel_coordinates,
-                destination_coordinates,
-                units="naut",
-                restrictions=restrictions
+            vessel_coordinates = [float(longitude), float(latitude)]
+            destination_coordinates = get_coordinates(destination)
+            route = api_route(
+                route_coordinates("origin", vessel_coordinates),
+                {"destination_port_id": str(destination["port_id"])},
+                restrictions,
             )
 
             distance = float(
@@ -1185,12 +1209,12 @@ with tab3:
             )
 
             # Create interactive map
-            route_coordinates = [
+            map_coordinates = [
                 [lat, lon]
                 for lon, lat in route.geometry["coordinates"]
             ]
 
-            if not route_coordinates:
+            if not map_coordinates:
                 raise ValueError(
                     "No route coordinates were returned."
                 )
@@ -1202,7 +1226,7 @@ with tab3:
 
             # Draw maritime route
             folium.PolyLine(
-                locations=route_coordinates,
+                locations=map_coordinates,
                 color="blue",
                 weight=4,
                 tooltip=f"Maritime Distance: {distance:,.2f} NM"
@@ -1231,7 +1255,7 @@ with tab3:
 
             # Fit map to route
             voyage_map.fit_bounds(
-                route_coordinates
+                map_coordinates
                 + [[latitude, longitude]]
                 + [destination_location]
             )
