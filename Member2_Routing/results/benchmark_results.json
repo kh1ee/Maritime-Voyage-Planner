@@ -1,0 +1,4044 @@
+{
+  "engine": {
+    "name": "searoute-py",
+    "version": "1.6.0",
+    "units": "nautical miles",
+    "default_restrictions": [
+      "northwest"
+    ],
+    "append_orig_dest": false,
+    "network_nodes": 9708,
+    "network_edges": 15970
+  },
+  "workbook": "/home/claude/work/out/Member2_Routing/data/voyage_planner_datasets.xlsx",
+  "data_notes": [],
+  "benchmarks": [
+    {
+      "benchmark_id": "BM_001",
+      "route_name": "Singapore to Hong Kong",
+      "endpoint": "route",
+      "category": "short",
+      "request": {
+        "origin_port_id": "SGSIN",
+        "destination_port_id": "HKHKG"
+      },
+      "required_passage": null,
+      "excluded_passage": null,
+      "expected_nm": 1439.0,
+      "tolerance_nm": 100.0,
+      "actual_nm": 1438.8,
+      "difference_nm": -0.2,
+      "passed": true,
+      "passages_used": [],
+      "distance_by_leg_nm": [
+        1438.8
+      ],
+      "warnings": [
+        "Academic estimate; not for navigation.",
+        "Hong Kong is 14.1 nm from the nearest routing-network node; that access distance is not included in distance_nm. Its approach point is pending geographic review (T03)."
+      ],
+      "response": {
+        "route_id": "route-63bc39da5c",
+        "status": "success",
+        "distance_nm": 1438.8,
+        "origin": {
+          "port_id": "SGSIN",
+          "port_name": "Singapore",
+          "latitude": 1.2644,
+          "longitude": 103.82,
+          "location_type": "port"
+        },
+        "destination": {
+          "port_id": "HKHKG",
+          "port_name": "Hong Kong",
+          "latitude": 22.29,
+          "longitude": 114.17,
+          "location_type": "port"
+        },
+        "routing_points": [
+          {
+            "sequence": 1,
+            "role": "origin",
+            "type": "port",
+            "id": "SGSIN",
+            "name": "Singapore",
+            "requested_latitude": 1.2644,
+            "requested_longitude": 103.82,
+            "network_latitude": 1.259893,
+            "network_longitude": 103.763466,
+            "snap_distance_nm": 3.4
+          },
+          {
+            "sequence": 2,
+            "role": "destination",
+            "type": "port",
+            "id": "HKHKG",
+            "name": "Hong Kong",
+            "requested_latitude": 22.29,
+            "requested_longitude": 114.17,
+            "network_latitude": 22.253513,
+            "network_longitude": 114.421234,
+            "snap_distance_nm": 14.1
+          }
+        ],
+        "passages_used": [],
+        "required_passage": null,
+        "excluded_passage": null,
+        "distance_by_leg_nm": [
+          1438.8
+        ],
+        "unconstrained_distance_nm": null,
+        "network_passages_traversed": [],
+        "route_geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              103.763466,
+              1.259893
+            ],
+            [
+              103.861103,
+              1.171415
+            ],
+            [
+              104.145848,
+              1.249295
+            ],
+            [
+              104.482294,
+              1.341312
+            ],
+            [
+              107.3207,
+              7.6091
+            ],
+            [
+              109.758911,
+              12.146746
+            ],
+            [
+              110.551147,
+              13.789771
+            ],
+            [
+              110.928955,
+              15.644197
+            ],
+            [
+              111.390381,
+              17.219511
+            ],
+            [
+              114.1,
+              21.7
+            ],
+            [
+              114.216614,
+              21.932855
+            ],
+            [
+              114.426727,
+              22.070369
+            ],
+            [
+              114.421234,
+              22.253513
+            ]
+          ]
+        },
+        "assumptions": [
+          "Distances are shortest paths on the searoute-py maritime network, in nautical miles.",
+          "Each requested point is snapped to the nearest network node; the access distance to that node is not included in distance_nm.",
+          "The Arctic 'northwest' passage is blocked by default (searoute-py default).",
+          "Port approach points from the Port Reference tab were used as routing coordinates."
+        ],
+        "warnings": [
+          "Academic estimate; not for navigation.",
+          "Hong Kong is 14.1 nm from the nearest routing-network node; that access distance is not included in distance_nm. Its approach point is pending geographic review (T03)."
+        ],
+        "calculation_version": "0.1.0",
+        "routing_engine": {
+          "name": "searoute-py",
+          "version": "1.6.0",
+          "units": "nautical miles",
+          "default_restrictions": [
+            "northwest"
+          ],
+          "append_orig_dest": false,
+          "network_nodes": 9708,
+          "network_edges": 15970
+        }
+      }
+    },
+    {
+      "benchmark_id": "BM_002",
+      "route_name": "Rotterdam to Hamburg",
+      "endpoint": "route",
+      "category": "short",
+      "request": {
+        "origin_port_id": "NLRTM",
+        "destination_port_id": "DEHAM"
+      },
+      "required_passage": null,
+      "excluded_passage": null,
+      "expected_nm": 298.0,
+      "tolerance_nm": 100.0,
+      "actual_nm": 297.7,
+      "difference_nm": -0.3,
+      "passed": true,
+      "passages_used": [],
+      "distance_by_leg_nm": [
+        297.7
+      ],
+      "warnings": [
+        "Academic estimate; not for navigation."
+      ],
+      "response": {
+        "route_id": "route-0fab100d65",
+        "status": "success",
+        "distance_nm": 297.7,
+        "origin": {
+          "port_id": "NLRTM",
+          "port_name": "Rotterdam",
+          "latitude": 51.95,
+          "longitude": 4.14,
+          "location_type": "port"
+        },
+        "destination": {
+          "port_id": "DEHAM",
+          "port_name": "Hamburg",
+          "latitude": 53.54,
+          "longitude": 9.97,
+          "location_type": "port"
+        },
+        "routing_points": [
+          {
+            "sequence": 1,
+            "role": "origin",
+            "type": "port",
+            "id": "NLRTM",
+            "name": "Rotterdam",
+            "requested_latitude": 51.95,
+            "requested_longitude": 4.14,
+            "network_latitude": 51.961827,
+            "network_longitude": 4.151802,
+            "snap_distance_nm": 0.8
+          },
+          {
+            "sequence": 2,
+            "role": "destination",
+            "type": "port",
+            "id": "DEHAM",
+            "name": "Hamburg",
+            "requested_latitude": 53.54,
+            "requested_longitude": 9.97,
+            "network_latitude": 53.545112,
+            "network_longitude": 9.927252,
+            "snap_distance_nm": 1.6
+          }
+        ],
+        "passages_used": [],
+        "required_passage": null,
+        "excluded_passage": null,
+        "distance_by_leg_nm": [
+          297.7
+        ],
+        "unconstrained_distance_nm": null,
+        "network_passages_traversed": [],
+        "route_geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              4.151802,
+              51.961827
+            ],
+            [
+              4.069748,
+              51.987629
+            ],
+            [
+              3.9,
+              52
+            ],
+            [
+              4.308389,
+              52.513982
+            ],
+            [
+              4.9,
+              53.5
+            ],
+            [
+              6.384053,
+              53.685507
+            ],
+            [
+              8.25,
+              53.9
+            ],
+            [
+              8.745294,
+              53.909831
+            ],
+            [
+              9.041942,
+              53.874321
+            ],
+            [
+              9.227347,
+              53.877053
+            ],
+            [
+              9.336273,
+              53.840148
+            ],
+            [
+              9.39653,
+              53.775829
+            ],
+            [
+              9.496185,
+              53.710038
+            ],
+            [
+              9.535584,
+              53.633153
+            ],
+            [
+              9.632921,
+              53.583652
+            ],
+            [
+              9.751117,
+              53.55475
+            ],
+            [
+              9.927252,
+              53.545112
+            ]
+          ]
+        },
+        "assumptions": [
+          "Distances are shortest paths on the searoute-py maritime network, in nautical miles.",
+          "Each requested point is snapped to the nearest network node; the access distance to that node is not included in distance_nm.",
+          "The Arctic 'northwest' passage is blocked by default (searoute-py default).",
+          "Port approach points from the Port Reference tab were used as routing coordinates."
+        ],
+        "warnings": [
+          "Academic estimate; not for navigation."
+        ],
+        "calculation_version": "0.1.0",
+        "routing_engine": {
+          "name": "searoute-py",
+          "version": "1.6.0",
+          "units": "nautical miles",
+          "default_restrictions": [
+            "northwest"
+          ],
+          "append_orig_dest": false,
+          "network_nodes": 9708,
+          "network_edges": 15970
+        }
+      }
+    },
+    {
+      "benchmark_id": "BM_003",
+      "route_name": "Singapore to Rotterdam",
+      "endpoint": "route",
+      "category": "long",
+      "request": {
+        "origin_port_id": "SGSIN",
+        "destination_port_id": "NLRTM"
+      },
+      "required_passage": null,
+      "excluded_passage": null,
+      "expected_nm": 8368.0,
+      "tolerance_nm": 250.0,
+      "actual_nm": 8368.2,
+      "difference_nm": 0.2,
+      "passed": true,
+      "passages_used": [
+        "MALACCA",
+        "SUEZ",
+        "GIBRALTAR"
+      ],
+      "distance_by_leg_nm": [
+        8368.2
+      ],
+      "warnings": [
+        "Academic estimate; not for navigation."
+      ],
+      "response": {
+        "route_id": "route-bfc42a037a",
+        "status": "success",
+        "distance_nm": 8368.2,
+        "origin": {
+          "port_id": "SGSIN",
+          "port_name": "Singapore",
+          "latitude": 1.2644,
+          "longitude": 103.82,
+          "location_type": "port"
+        },
+        "destination": {
+          "port_id": "NLRTM",
+          "port_name": "Rotterdam",
+          "latitude": 51.95,
+          "longitude": 4.14,
+          "location_type": "port"
+        },
+        "routing_points": [
+          {
+            "sequence": 1,
+            "role": "origin",
+            "type": "port",
+            "id": "SGSIN",
+            "name": "Singapore",
+            "requested_latitude": 1.2644,
+            "requested_longitude": 103.82,
+            "network_latitude": 1.259893,
+            "network_longitude": 103.763466,
+            "snap_distance_nm": 3.4
+          },
+          {
+            "sequence": 2,
+            "role": "destination",
+            "type": "port",
+            "id": "NLRTM",
+            "name": "Rotterdam",
+            "requested_latitude": 51.95,
+            "requested_longitude": 4.14,
+            "network_latitude": 51.961827,
+            "network_longitude": 4.151802,
+            "snap_distance_nm": 0.8
+          }
+        ],
+        "passages_used": [
+          "MALACCA",
+          "SUEZ",
+          "GIBRALTAR"
+        ],
+        "required_passage": null,
+        "excluded_passage": null,
+        "distance_by_leg_nm": [
+          8368.2
+        ],
+        "unconstrained_distance_nm": null,
+        "network_passages_traversed": [
+          "babalmandab",
+          "gibraltar",
+          "malacca",
+          "suez"
+        ],
+        "route_geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              103.763466,
+              1.259893
+            ],
+            [
+              103.658066,
+              1.197766
+            ],
+            [
+              103.6,
+              1.1
+            ],
+            [
+              102,
+              2
+            ],
+            [
+              101.316415,
+              2.586072
+            ],
+            [
+              100.6,
+              3.2
+            ],
+            [
+              99.763807,
+              4.084523
+            ],
+            [
+              98.128129,
+              5.811729
+            ],
+            [
+              94.326449,
+              6.157121
+            ],
+            [
+              90,
+              6.4664
+            ],
+            [
+              85.9479,
+              6.1983
+            ],
+            [
+              81.9,
+              5.9
+            ],
+            [
+              80.1,
+              5.8
+            ],
+            [
+              78.019032,
+              6.387793
+            ],
+            [
+              75.966807,
+              6.966807
+            ],
+            [
+              70.817426,
+              8.365148
+            ],
+            [
+              69.999915,
+              8.582747
+            ],
+            [
+              69.671733,
+              8.6701
+            ],
+            [
+              69.3291,
+              8.7613
+            ],
+            [
+              68.858995,
+              8.881605
+            ],
+            [
+              65.7044,
+              9.6889
+            ],
+            [
+              64.992809,
+              9.862937
+            ],
+            [
+              64.698862,
+              9.934828
+            ],
+            [
+              64.303249,
+              10.031585
+            ],
+            [
+              62.0601,
+              10.5802
+            ],
+            [
+              60.825733,
+              10.866984
+            ],
+            [
+              59.894005,
+              11.083455
+            ],
+            [
+              55.041504,
+              12.747516
+            ],
+            [
+              53.61885,
+              13.300009
+            ],
+            [
+              50.856149,
+              12.884027
+            ],
+            [
+              45,
+              12
+            ],
+            [
+              43.746586,
+              12.40439
+            ],
+            [
+              43.3,
+              12.7
+            ],
+            [
+              42.541058,
+              13.676089
+            ],
+            [
+              42.341309,
+              14.509144
+            ],
+            [
+              41.000977,
+              17.098792
+            ],
+            [
+              38.572998,
+              20.807472
+            ],
+            [
+              37.786499,
+              22.210682
+            ],
+            [
+              37,
+              23.6
+            ],
+            [
+              34.5,
+              27
+            ],
+            [
+              33.233643,
+              28.444544
+            ],
+            [
+              32.6,
+              29.7
+            ],
+            [
+              32.557983,
+              30.213982
+            ],
+            [
+              32.382202,
+              30.318359
+            ],
+            [
+              32.310104,
+              31.102922
+            ],
+            [
+              32.359877,
+              31.336373
+            ],
+            [
+              32.1,
+              31.7
+            ],
+            [
+              30.408377,
+              32.316071
+            ],
+            [
+              28.905525,
+              32.863395
+            ],
+            [
+              28.212434,
+              33.115811
+            ],
+            [
+              27.927542,
+              33.219565
+            ],
+            [
+              26.306431,
+              33.748752
+            ],
+            [
+              25.478721,
+              34.011915
+            ],
+            [
+              24.926664,
+              34.187436
+            ],
+            [
+              23,
+              34.8
+            ],
+            [
+              21.407365,
+              35.126694
+            ],
+            [
+              17.902084,
+              35.845726
+            ],
+            [
+              16.726588,
+              36.086854
+            ],
+            [
+              15.2,
+              36.4
+            ],
+            [
+              13.263819,
+              36.907095
+            ],
+            [
+              12.110644,
+              37.209117
+            ],
+            [
+              12.086301,
+              37.215493
+            ],
+            [
+              11.827836,
+              37.283186
+            ],
+            [
+              11.172235,
+              37.454891
+            ],
+            [
+              11,
+              37.5
+            ],
+            [
+              10.373031,
+              37.482087
+            ],
+            [
+              7.5,
+              37.4
+            ],
+            [
+              3.1,
+              37.2
+            ],
+            [
+              -0.366667,
+              36.666667
+            ],
+            [
+              -1.62439,
+              36.473171
+            ],
+            [
+              -2.244793,
+              36.377724
+            ],
+            [
+              -2.590675,
+              36.324512
+            ],
+            [
+              -3.264225,
+              36.220888
+            ],
+            [
+              -3.683043,
+              36.156455
+            ],
+            [
+              -4.7,
+              36
+            ],
+            [
+              -5.269383,
+              35.97289
+            ],
+            [
+              -5.354867,
+              35.968819
+            ],
+            [
+              -5.75,
+              35.95
+            ],
+            [
+              -7.26966,
+              36.31906
+            ],
+            [
+              -8.219465,
+              36.549727
+            ],
+            [
+              -9.25,
+              36.8
+            ],
+            [
+              -9.452092,
+              37.781589
+            ],
+            [
+              -9.6,
+              38.5
+            ],
+            [
+              -9.9844,
+              40.7798
+            ],
+            [
+              -9.5,
+              43
+            ],
+            [
+              -9.14264,
+              43.688493
+            ],
+            [
+              -9.019938,
+              43.924891
+            ],
+            [
+              -8.49576,
+              44.934776
+            ],
+            [
+              -7.954994,
+              45.668797
+            ],
+            [
+              -6.698867,
+              47.340067
+            ],
+            [
+              -5.5,
+              48.6667
+            ],
+            [
+              -5.06401,
+              48.799916
+            ],
+            [
+              -4.270518,
+              49.042365
+            ],
+            [
+              -4.030414,
+              49.115729
+            ],
+            [
+              -3.986163,
+              49.129249
+            ],
+            [
+              -3.197043,
+              49.370363
+            ],
+            [
+              -2.39189,
+              49.616376
+            ],
+            [
+              -1.992006,
+              49.738559
+            ],
+            [
+              -1.93365,
+              49.75639
+            ],
+            [
+              -1.665743,
+              49.838248
+            ],
+            [
+              -1.47977,
+              49.895072
+            ],
+            [
+              -1.3,
+              49.95
+            ],
+            [
+              -0.671539,
+              50.155459
+            ],
+            [
+              -0.545959,
+              50.196513
+            ],
+            [
+              -0.343359,
+              50.262748
+            ],
+            [
+              0.39288,
+              50.503441
+            ],
+            [
+              1.193894,
+              50.765311
+            ],
+            [
+              1.3,
+              50.8
+            ],
+            [
+              1.441366,
+              50.849032
+            ],
+            [
+              1.567687,
+              50.892845
+            ],
+            [
+              1.813195,
+              50.988387
+            ],
+            [
+              2.1,
+              51.1
+            ],
+            [
+              2.356699,
+              51.178984
+            ],
+            [
+              3.4,
+              51.5
+            ],
+            [
+              3.559619,
+              51.659619
+            ],
+            [
+              3.9,
+              52
+            ],
+            [
+              4.069748,
+              51.987629
+            ],
+            [
+              4.151802,
+              51.961827
+            ]
+          ]
+        },
+        "assumptions": [
+          "Distances are shortest paths on the searoute-py maritime network, in nautical miles.",
+          "Each requested point is snapped to the nearest network node; the access distance to that node is not included in distance_nm.",
+          "The Arctic 'northwest' passage is blocked by default (searoute-py default).",
+          "Port approach points from the Port Reference tab were used as routing coordinates."
+        ],
+        "warnings": [
+          "Academic estimate; not for navigation."
+        ],
+        "calculation_version": "0.1.0",
+        "routing_engine": {
+          "name": "searoute-py",
+          "version": "1.6.0",
+          "units": "nautical miles",
+          "default_restrictions": [
+            "northwest"
+          ],
+          "append_orig_dest": false,
+          "network_nodes": 9708,
+          "network_edges": 15970
+        }
+      }
+    },
+    {
+      "benchmark_id": "BM_004",
+      "route_name": "Houston to Rotterdam",
+      "endpoint": "route",
+      "category": "long",
+      "request": {
+        "origin_port_id": "USHOU",
+        "destination_port_id": "NLRTM"
+      },
+      "required_passage": null,
+      "excluded_passage": null,
+      "expected_nm": 5041.0,
+      "tolerance_nm": 250.0,
+      "actual_nm": 5041.2,
+      "difference_nm": 0.2,
+      "passed": true,
+      "passages_used": [],
+      "distance_by_leg_nm": [
+        5041.2
+      ],
+      "warnings": [
+        "Academic estimate; not for navigation."
+      ],
+      "response": {
+        "route_id": "route-2eb749349c",
+        "status": "success",
+        "distance_nm": 5041.2,
+        "origin": {
+          "port_id": "USHOU",
+          "port_name": "Houston",
+          "latitude": 29.73,
+          "longitude": -95.0,
+          "location_type": "port"
+        },
+        "destination": {
+          "port_id": "NLRTM",
+          "port_name": "Rotterdam",
+          "latitude": 51.95,
+          "longitude": 4.14,
+          "location_type": "port"
+        },
+        "routing_points": [
+          {
+            "sequence": 1,
+            "role": "origin",
+            "type": "port",
+            "id": "USHOU",
+            "name": "Houston",
+            "requested_latitude": 29.73,
+            "requested_longitude": -95.0,
+            "network_latitude": 29.700952,
+            "network_longitude": -95.001354,
+            "snap_distance_nm": 1.7
+          },
+          {
+            "sequence": 2,
+            "role": "destination",
+            "type": "port",
+            "id": "NLRTM",
+            "name": "Rotterdam",
+            "requested_latitude": 51.95,
+            "requested_longitude": 4.14,
+            "network_latitude": 51.961827,
+            "network_longitude": 4.151802,
+            "snap_distance_nm": 0.8
+          }
+        ],
+        "passages_used": [],
+        "required_passage": null,
+        "excluded_passage": null,
+        "distance_by_leg_nm": [
+          5041.2
+        ],
+        "unconstrained_distance_nm": null,
+        "network_passages_traversed": [],
+        "route_geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -95.001354,
+              29.700952
+            ],
+            [
+              -94.9823,
+              29.6835
+            ],
+            [
+              -94.9523,
+              29.6065
+            ],
+            [
+              -94.8699,
+              29.4996
+            ],
+            [
+              -94.8021,
+              29.3675
+            ],
+            [
+              -94.7696,
+              29.3423
+            ],
+            [
+              -94.6878,
+              29.3379
+            ],
+            [
+              -94.6251,
+              29.3068
+            ],
+            [
+              -94.3779,
+              29.1479
+            ],
+            [
+              -93.6685,
+              29.1321
+            ],
+            [
+              -93.214,
+              29.13
+            ],
+            [
+              -92.411602,
+              28.867366
+            ],
+            [
+              -92.151777,
+              28.782322
+            ],
+            [
+              -91.842882,
+              28.645662
+            ],
+            [
+              -91.549269,
+              28.515764
+            ],
+            [
+              -91.308884,
+              28.409415
+            ],
+            [
+              -90.380776,
+              27.998808
+            ],
+            [
+              -89.893027,
+              27.783021
+            ],
+            [
+              -89.766422,
+              27.727009
+            ],
+            [
+              -88.638654,
+              27.22807
+            ],
+            [
+              -88.194005,
+              27.029745
+            ],
+            [
+              -87.365118,
+              26.617905
+            ],
+            [
+              -86.86025,
+              26.367057
+            ],
+            [
+              -86.685611,
+              26.280286
+            ],
+            [
+              -85.868843,
+              25.874468
+            ],
+            [
+              -84.431568,
+              25.160345
+            ],
+            [
+              -82.7,
+              24.3
+            ],
+            [
+              -81.825,
+              24.2187
+            ],
+            [
+              -80.8143,
+              24.504
+            ],
+            [
+              -80.797078,
+              24.513328
+            ],
+            [
+              -80.3533,
+              24.7537
+            ],
+            [
+              -80.029414,
+              25.114792
+            ],
+            [
+              -80.0286,
+              25.1157
+            ],
+            [
+              -79.9482,
+              25.3329
+            ],
+            [
+              -79.815,
+              25.7903
+            ],
+            [
+              -79.5356,
+              26.0942
+            ],
+            [
+              -79.3328,
+              26.7372
+            ],
+            [
+              -79.3211,
+              27.4491
+            ],
+            [
+              -78.173844,
+              27.458225
+            ],
+            [
+              -77.099645,
+              27.723433
+            ],
+            [
+              -77.010956,
+              27.797678
+            ],
+            [
+              -76.304169,
+              28.389357
+            ],
+            [
+              -75.640718,
+              28.936853
+            ],
+            [
+              -74.724316,
+              29.647627
+            ],
+            [
+              -74.599389,
+              29.744522
+            ],
+            [
+              -74.176384,
+              30.07261
+            ],
+            [
+              -73.978383,
+              30.226183
+            ],
+            [
+              -73.860704,
+              30.317457
+            ],
+            [
+              -73.069762,
+              30.930923
+            ],
+            [
+              -73.024825,
+              30.965776
+            ],
+            [
+              -72.69332,
+              31.222897
+            ],
+            [
+              -72.495855,
+              31.370067
+            ],
+            [
+              -72.495831,
+              31.370084
+            ],
+            [
+              -72.306161,
+              31.505173
+            ],
+            [
+              -71.736244,
+              31.911086
+            ],
+            [
+              -71.494758,
+              32.083079
+            ],
+            [
+              -71.121104,
+              32.349208
+            ],
+            [
+              -71.022856,
+              32.419183
+            ],
+            [
+              -70.214581,
+              32.994862
+            ],
+            [
+              -69.841727,
+              33.260421
+            ],
+            [
+              -69.424515,
+              33.557573
+            ],
+            [
+              -69.087845,
+              33.787235
+            ],
+            [
+              -68.415982,
+              34.222444
+            ],
+            [
+              -67.957084,
+              34.519702
+            ],
+            [
+              -67.613187,
+              34.742467
+            ],
+            [
+              -67.057094,
+              35.102685
+            ],
+            [
+              -66.514606,
+              35.45409
+            ],
+            [
+              -65.7143,
+              35.9725
+            ],
+            [
+              -61.9797,
+              38.1497
+            ],
+            [
+              -60.823113,
+              38.749556
+            ],
+            [
+              -60.000346,
+              39.176278
+            ],
+            [
+              -59.428691,
+              39.472763
+            ],
+            [
+              -58.343989,
+              40.035336
+            ],
+            [
+              -58.0238,
+              40.2014
+            ],
+            [
+              -53.8316,
+              42.1102
+            ],
+            [
+              -52.59634,
+              42.59634
+            ],
+            [
+              -52.53975,
+              42.618612
+            ],
+            [
+              -50.002169,
+              43.617284
+            ],
+            [
+              -49.3923,
+              43.8573
+            ],
+            [
+              -45.319011,
+              45.21651
+            ],
+            [
+              -45.015812,
+              45.317684
+            ],
+            [
+              -40.001969,
+              46.719771
+            ],
+            [
+              -37.184144,
+              47.354689
+            ],
+            [
+              -34.5883,
+              47.9273
+            ],
+            [
+              -31.783064,
+              48.396456
+            ],
+            [
+              -30.000784,
+              48.69453
+            ],
+            [
+              -28.801592,
+              48.874132
+            ],
+            [
+              -28.318152,
+              48.930101
+            ],
+            [
+              -23.6625,
+              49.4691
+            ],
+            [
+              -20.348228,
+              49.686831
+            ],
+            [
+              -20.000174,
+              49.709697
+            ],
+            [
+              -19.742404,
+              49.726631
+            ],
+            [
+              -19.57938,
+              49.737341
+            ],
+            [
+              -18.158595,
+              49.83068
+            ],
+            [
+              -15.355327,
+              49.884617
+            ],
+            [
+              -12.051344,
+              49.927561
+            ],
+            [
+              -10.690172,
+              49.88336
+            ],
+            [
+              -6.697411,
+              49.753705
+            ],
+            [
+              -6.5833,
+              49.75
+            ],
+            [
+              -5.979701,
+              49.782237
+            ],
+            [
+              -5.740436,
+              49.795016
+            ],
+            [
+              -5.630965,
+              49.800862
+            ],
+            [
+              -5.491611,
+              49.808305
+            ],
+            [
+              -4.868405,
+              49.841589
+            ],
+            [
+              -4.088283,
+              49.883253
+            ],
+            [
+              -2.93586,
+              49.944802
+            ],
+            [
+              -2.624015,
+              50.023556
+            ],
+            [
+              -2.270882,
+              50.112738
+            ],
+            [
+              -2.100162,
+              50.138244
+            ],
+            [
+              -1.755087,
+              50.189798
+            ],
+            [
+              -1.577583,
+              50.216317
+            ],
+            [
+              -1.251907,
+              50.264973
+            ],
+            [
+              -0.76446,
+              50.337798
+            ],
+            [
+              -0.764313,
+              50.33751
+            ],
+            [
+              -0.672505,
+              50.358079
+            ],
+            [
+              -0.505582,
+              50.395477
+            ],
+            [
+              0.301537,
+              50.576304
+            ],
+            [
+              1.149895,
+              50.76637
+            ],
+            [
+              1.3,
+              50.8
+            ],
+            [
+              1.441366,
+              50.849032
+            ],
+            [
+              1.567687,
+              50.892845
+            ],
+            [
+              1.813195,
+              50.988387
+            ],
+            [
+              2.1,
+              51.1
+            ],
+            [
+              2.356699,
+              51.178984
+            ],
+            [
+              3.4,
+              51.5
+            ],
+            [
+              3.559619,
+              51.659619
+            ],
+            [
+              3.9,
+              52
+            ],
+            [
+              4.069748,
+              51.987629
+            ],
+            [
+              4.151802,
+              51.961827
+            ]
+          ]
+        },
+        "assumptions": [
+          "Distances are shortest paths on the searoute-py maritime network, in nautical miles.",
+          "Each requested point is snapped to the nearest network node; the access distance to that node is not included in distance_nm.",
+          "The Arctic 'northwest' passage is blocked by default (searoute-py default).",
+          "Port approach points from the Port Reference tab were used as routing coordinates."
+        ],
+        "warnings": [
+          "Academic estimate; not for navigation."
+        ],
+        "calculation_version": "0.1.0",
+        "routing_engine": {
+          "name": "searoute-py",
+          "version": "1.6.0",
+          "units": "nautical miles",
+          "default_restrictions": [
+            "northwest"
+          ],
+          "append_orig_dest": false,
+          "network_nodes": 9708,
+          "network_edges": 15970
+        }
+      }
+    },
+    {
+      "benchmark_id": "BM_005",
+      "route_name": "Houston to Tocopilla via Panama",
+      "endpoint": "route",
+      "category": "canal alternative",
+      "request": {
+        "origin_port_id": "USHOU",
+        "destination_port_id": "CLTOQ",
+        "required_passage": "PANAMA"
+      },
+      "required_passage": "PANAMA",
+      "excluded_passage": null,
+      "expected_nm": 3594.0,
+      "tolerance_nm": 250.0,
+      "actual_nm": 3594.3,
+      "difference_nm": 0.3,
+      "passed": true,
+      "passages_used": [
+        "PANAMA"
+      ],
+      "distance_by_leg_nm": [
+        1534.6,
+        2059.7
+      ],
+      "warnings": [
+        "Academic estimate; not for navigation.",
+        "Tocopilla is 114.2 nm from the nearest routing-network node; that access distance is not included in distance_nm. Its approach point is pending geographic review (T03)."
+      ],
+      "response": {
+        "route_id": "route-b57f9654ab",
+        "status": "success",
+        "distance_nm": 3594.3,
+        "origin": {
+          "port_id": "USHOU",
+          "port_name": "Houston",
+          "latitude": 29.73,
+          "longitude": -95.0,
+          "location_type": "port"
+        },
+        "destination": {
+          "port_id": "CLTOQ",
+          "port_name": "Tocopilla",
+          "latitude": -22.09,
+          "longitude": -70.2,
+          "location_type": "port"
+        },
+        "routing_points": [
+          {
+            "sequence": 1,
+            "role": "origin",
+            "type": "port",
+            "id": "USHOU",
+            "name": "Houston",
+            "requested_latitude": 29.73,
+            "requested_longitude": -95.0,
+            "network_latitude": 29.700952,
+            "network_longitude": -95.001354,
+            "snap_distance_nm": 1.7
+          },
+          {
+            "sequence": 2,
+            "role": "required_passage",
+            "type": "passage",
+            "id": "PANAMA",
+            "name": "Panama Canal",
+            "requested_latitude": 9.08,
+            "requested_longitude": -79.68,
+            "network_latitude": 9.10639,
+            "network_longitude": -79.689331,
+            "snap_distance_nm": 1.7
+          },
+          {
+            "sequence": 3,
+            "role": "destination",
+            "type": "port",
+            "id": "CLTOQ",
+            "name": "Tocopilla",
+            "requested_latitude": -22.09,
+            "requested_longitude": -70.2,
+            "network_latitude": -20.231275,
+            "network_longitude": -70.631104,
+            "snap_distance_nm": 114.2
+          }
+        ],
+        "passages_used": [
+          "PANAMA"
+        ],
+        "required_passage": "PANAMA",
+        "excluded_passage": null,
+        "distance_by_leg_nm": [
+          1534.6,
+          2059.7
+        ],
+        "unconstrained_distance_nm": 3594.3,
+        "network_passages_traversed": [
+          "panama"
+        ],
+        "route_geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -95.001354,
+              29.700952
+            ],
+            [
+              -94.9823,
+              29.6835
+            ],
+            [
+              -94.9523,
+              29.6065
+            ],
+            [
+              -94.8699,
+              29.4996
+            ],
+            [
+              -94.8021,
+              29.3675
+            ],
+            [
+              -94.7696,
+              29.3423
+            ],
+            [
+              -94.6878,
+              29.3379
+            ],
+            [
+              -94.6251,
+              29.3068
+            ],
+            [
+              -94.3779,
+              29.1479
+            ],
+            [
+              -93.8617,
+              28.8261
+            ],
+            [
+              -92.8863,
+              28.2242
+            ],
+            [
+              -92.561627,
+              27.899352
+            ],
+            [
+              -92.508888,
+              27.846584
+            ],
+            [
+              -91.733039,
+              27.070317
+            ],
+            [
+              -90.859664,
+              26.19647
+            ],
+            [
+              -90.8482,
+              26.185
+            ],
+            [
+              -90.558358,
+              25.916089
+            ],
+            [
+              -88.450117,
+              23.960094
+            ],
+            [
+              -87.183503,
+              22.946802
+            ],
+            [
+              -86.890685,
+              22.712548
+            ],
+            [
+              -86.417168,
+              22.160986
+            ],
+            [
+              -86.11065,
+              21.856981
+            ],
+            [
+              -85.9021,
+              21.64977
+            ],
+            [
+              -85.599913,
+              20.933101
+            ],
+            [
+              -82.8698,
+              16.0793
+            ],
+            [
+              -82.166049,
+              14.527189
+            ],
+            [
+              -81.30559,
+              12.639853
+            ],
+            [
+              -80,
+              9.75
+            ],
+            [
+              -79.900612,
+              9.208176
+            ],
+            [
+              -79.821304,
+              9.173012
+            ],
+            [
+              -79.803246,
+              9.118307
+            ],
+            [
+              -79.741379,
+              9.118236
+            ],
+            [
+              -79.689331,
+              9.10639
+            ],
+            [
+              -79.641747,
+              9.035982
+            ],
+            [
+              -79.585922,
+              8.992656
+            ],
+            [
+              -79.494118,
+              8.796576
+            ],
+            [
+              -79.5,
+              8.6
+            ],
+            [
+              -79.672852,
+              7.422389
+            ],
+            [
+              -80.412834,
+              5.194964
+            ],
+            [
+              -80.9033,
+              3.0505
+            ],
+            [
+              -81.176151,
+              1.84843
+            ],
+            [
+              -81.8,
+              -0.9
+            ],
+            [
+              -81.25,
+              -3
+            ],
+            [
+              -81.9,
+              -5.25
+            ],
+            [
+              -80.2,
+              -7.3
+            ],
+            [
+              -80,
+              -10
+            ],
+            [
+              -77.7,
+              -12
+            ],
+            [
+              -77,
+              -13.7
+            ],
+            [
+              -75.168457,
+              -15.919074
+            ],
+            [
+              -72.7,
+              -17.3
+            ],
+            [
+              -71,
+              -18.9
+            ],
+            [
+              -70.631104,
+              -20.231275
+            ]
+          ]
+        },
+        "assumptions": [
+          "Distances are shortest paths on the searoute-py maritime network, in nautical miles.",
+          "Each requested point is snapped to the nearest network node; the access distance to that node is not included in distance_nm.",
+          "The Arctic 'northwest' passage is blocked by default (searoute-py default).",
+          "Port approach points from the Port Reference tab were used as routing coordinates.",
+          "Required passage PANAMA is enforced by routing via its reference point (9.08, -79.68); the total is the sum of the legs either side of it.",
+          "Passage constraints change the distance from 3,594.3 nm (unconstrained) to 3,594.3 nm (+0.0 nm, +0%)."
+        ],
+        "warnings": [
+          "Academic estimate; not for navigation.",
+          "Tocopilla is 114.2 nm from the nearest routing-network node; that access distance is not included in distance_nm. Its approach point is pending geographic review (T03)."
+        ],
+        "calculation_version": "0.1.0",
+        "routing_engine": {
+          "name": "searoute-py",
+          "version": "1.6.0",
+          "units": "nautical miles",
+          "default_restrictions": [
+            "northwest"
+          ],
+          "append_orig_dest": false,
+          "network_nodes": 9708,
+          "network_edges": 15970
+        }
+      }
+    },
+    {
+      "benchmark_id": "BM_006",
+      "route_name": "Houston to Tocopilla via Cape Horn",
+      "endpoint": "route",
+      "category": "cape alternative",
+      "request": {
+        "origin_port_id": "USHOU",
+        "destination_port_id": "CLTOQ",
+        "required_passage": "CAPE_HORN",
+        "excluded_passage": "PANAMA"
+      },
+      "required_passage": "CAPE_HORN",
+      "excluded_passage": "PANAMA",
+      "expected_nm": 9973.0,
+      "tolerance_nm": 250.0,
+      "actual_nm": 9972.6,
+      "difference_nm": -0.4,
+      "passed": true,
+      "passages_used": [
+        "CAPE_HORN"
+      ],
+      "distance_by_leg_nm": [
+        7616.2,
+        2356.4
+      ],
+      "warnings": [
+        "Academic estimate; not for navigation.",
+        "Tocopilla is 114.2 nm from the nearest routing-network node; that access distance is not included in distance_nm. Its approach point is pending geographic review (T03).",
+        "The constrained route is more than 50% longer than the unconstrained route; check that the passage constraints are intended."
+      ],
+      "response": {
+        "route_id": "route-9905f0c426",
+        "status": "success",
+        "distance_nm": 9972.6,
+        "origin": {
+          "port_id": "USHOU",
+          "port_name": "Houston",
+          "latitude": 29.73,
+          "longitude": -95.0,
+          "location_type": "port"
+        },
+        "destination": {
+          "port_id": "CLTOQ",
+          "port_name": "Tocopilla",
+          "latitude": -22.09,
+          "longitude": -70.2,
+          "location_type": "port"
+        },
+        "routing_points": [
+          {
+            "sequence": 1,
+            "role": "origin",
+            "type": "port",
+            "id": "USHOU",
+            "name": "Houston",
+            "requested_latitude": 29.73,
+            "requested_longitude": -95.0,
+            "network_latitude": 29.700952,
+            "network_longitude": -95.001354,
+            "snap_distance_nm": 1.7
+          },
+          {
+            "sequence": 2,
+            "role": "required_passage",
+            "type": "passage",
+            "id": "CAPE_HORN",
+            "name": "Cape Horn",
+            "requested_latitude": -55.98,
+            "requested_longitude": -67.29,
+            "network_latitude": -55.998381,
+            "network_longitude": -67.467041,
+            "snap_distance_nm": 6.0
+          },
+          {
+            "sequence": 3,
+            "role": "destination",
+            "type": "port",
+            "id": "CLTOQ",
+            "name": "Tocopilla",
+            "requested_latitude": -22.09,
+            "requested_longitude": -70.2,
+            "network_latitude": -20.231275,
+            "network_longitude": -70.631104,
+            "snap_distance_nm": 114.2
+          }
+        ],
+        "passages_used": [
+          "CAPE_HORN"
+        ],
+        "required_passage": "CAPE_HORN",
+        "excluded_passage": "PANAMA",
+        "distance_by_leg_nm": [
+          7616.2,
+          2356.4
+        ],
+        "unconstrained_distance_nm": 3594.3,
+        "network_passages_traversed": [
+          "chili"
+        ],
+        "route_geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              -95.001354,
+              29.700952
+            ],
+            [
+              -94.9823,
+              29.6835
+            ],
+            [
+              -94.9523,
+              29.6065
+            ],
+            [
+              -94.8699,
+              29.4996
+            ],
+            [
+              -94.8021,
+              29.3675
+            ],
+            [
+              -94.7696,
+              29.3423
+            ],
+            [
+              -94.6878,
+              29.3379
+            ],
+            [
+              -94.6251,
+              29.3068
+            ],
+            [
+              -94.3779,
+              29.1479
+            ],
+            [
+              -93.6685,
+              29.1321
+            ],
+            [
+              -93.214,
+              29.13
+            ],
+            [
+              -92.411602,
+              28.867366
+            ],
+            [
+              -92.151777,
+              28.782322
+            ],
+            [
+              -91.842882,
+              28.645662
+            ],
+            [
+              -91.549269,
+              28.515764
+            ],
+            [
+              -91.308884,
+              28.409415
+            ],
+            [
+              -90.380776,
+              27.998808
+            ],
+            [
+              -89.893027,
+              27.783021
+            ],
+            [
+              -89.766422,
+              27.727009
+            ],
+            [
+              -88.638654,
+              27.22807
+            ],
+            [
+              -88.194005,
+              27.029745
+            ],
+            [
+              -87.365118,
+              26.617905
+            ],
+            [
+              -86.86025,
+              26.367057
+            ],
+            [
+              -86.685611,
+              26.280286
+            ],
+            [
+              -85.868843,
+              25.874468
+            ],
+            [
+              -84.431568,
+              25.160345
+            ],
+            [
+              -82.7,
+              24.3
+            ],
+            [
+              -82.065666,
+              24.077126
+            ],
+            [
+              -79,
+              23
+            ],
+            [
+              -78.082771,
+              22.639414
+            ],
+            [
+              -77.165541,
+              22.277878
+            ],
+            [
+              -76.182771,
+              21.889469
+            ],
+            [
+              -75.2,
+              21.5
+            ],
+            [
+              -74.406809,
+              21.113541
+            ],
+            [
+              -74.085967,
+              21.001536
+            ],
+            [
+              -73.811646,
+              20.915266
+            ],
+            [
+              -72,
+              20.3
+            ],
+            [
+              -70.62947,
+              20.057079
+            ],
+            [
+              -68.9,
+              19.75
+            ],
+            [
+              -67.95,
+              18.5
+            ],
+            [
+              -67.255752,
+              17.883904
+            ],
+            [
+              -66.6,
+              17.3
+            ],
+            [
+              -66.274325,
+              17.05734
+            ],
+            [
+              -64.288542,
+              15.577737
+            ],
+            [
+              -61.586092,
+              13.564433
+            ],
+            [
+              -61.281976,
+              13.442203
+            ],
+            [
+              -59.945647,
+              13.087647
+            ],
+            [
+              -59.133295,
+              12.623116
+            ],
+            [
+              -58.451251,
+              12.233099
+            ],
+            [
+              -56.9106,
+              11.3521
+            ],
+            [
+              -55.547019,
+              10.55093
+            ],
+            [
+              -52.9962,
+              9.0522
+            ],
+            [
+              -50.90855,
+              7.800354
+            ],
+            [
+              -49.1234,
+              6.7299
+            ],
+            [
+              -44.76997,
+              4.078524
+            ],
+            [
+              -42.878362,
+              2.917574
+            ],
+            [
+              -42.4761,
+              2.5118
+            ],
+            [
+              -41.712631,
+              1.737317
+            ],
+            [
+              -41.320869,
+              1.339903
+            ],
+            [
+              -40,
+              -2e-05
+            ],
+            [
+              -38.152311,
+              -1.565083
+            ],
+            [
+              -34.860393,
+              -4.720374
+            ],
+            [
+              -34.398193,
+              -5.555848
+            ],
+            [
+              -33.97522,
+              -6.959144
+            ],
+            [
+              -34.205933,
+              -8.091862
+            ],
+            [
+              -35.073853,
+              -9.849804
+            ],
+            [
+              -36.2,
+              -13
+            ],
+            [
+              -37.8202,
+              -16.5071
+            ],
+            [
+              -39.5,
+              -20
+            ],
+            [
+              -41.3,
+              -23.5
+            ],
+            [
+              -42.873028,
+              -26.085889
+            ],
+            [
+              -43.391511,
+              -26.93822
+            ],
+            [
+              -43.6594,
+              -27.3786
+            ],
+            [
+              -45.630023,
+              -30.365897
+            ],
+            [
+              -46.1885,
+              -31.2125
+            ],
+            [
+              -47.05551,
+              -32.407862
+            ],
+            [
+              -47.356163,
+              -32.822378
+            ],
+            [
+              -48.9288,
+              -34.9906
+            ],
+            [
+              -49.181268,
+              -35.302486
+            ],
+            [
+              -49.777768,
+              -36.039374
+            ],
+            [
+              -49.914953,
+              -38.484283
+            ],
+            [
+              -50.621291,
+              -39.35845
+            ],
+            [
+              -51.105622,
+              -39.95786
+            ],
+            [
+              -56.0902,
+              -44.84
+            ],
+            [
+              -60,
+              -50
+            ],
+            [
+              -63.1847,
+              -53.7546
+            ],
+            [
+              -64.978638,
+              -54.521081
+            ],
+            [
+              -65.258789,
+              -55.541065
+            ],
+            [
+              -66.395874,
+              -55.890716
+            ],
+            [
+              -66.958117,
+              -55.98361
+            ],
+            [
+              -67.467041,
+              -55.998381
+            ],
+            [
+              -68.308099,
+              -55.984791
+            ],
+            [
+              -69.19441,
+              -55.868696
+            ],
+            [
+              -69.569504,
+              -55.773762
+            ],
+            [
+              -71.385,
+              -55.3608
+            ],
+            [
+              -73.3059,
+              -54.6046
+            ],
+            [
+              -75.101482,
+              -52.587619
+            ],
+            [
+              -75.454102,
+              -52.099757
+            ],
+            [
+              -75.8605,
+              -51.4344
+            ],
+            [
+              -75.966507,
+              -48.912099
+            ],
+            [
+              -76.5,
+              -46.5001
+            ],
+            [
+              -75.613403,
+              -44.374913
+            ],
+            [
+              -75.428958,
+              -43.192207
+            ],
+            [
+              -75,
+              -41.3
+            ],
+            [
+              -73.778859,
+              -36.656922
+            ],
+            [
+              -73.108521,
+              -36.071302
+            ],
+            [
+              -72,
+              -33
+            ],
+            [
+              -72.8,
+              -29.6
+            ],
+            [
+              -72.020524,
+              -26.622891
+            ],
+            [
+              -71.3,
+              -23.8
+            ],
+            [
+              -70.631104,
+              -20.231275
+            ]
+          ]
+        },
+        "assumptions": [
+          "Distances are shortest paths on the searoute-py maritime network, in nautical miles.",
+          "Each requested point is snapped to the nearest network node; the access distance to that node is not included in distance_nm.",
+          "The Arctic 'northwest' passage is blocked by default (searoute-py default).",
+          "Port approach points from the Port Reference tab were used as routing coordinates.",
+          "Required passage CAPE_HORN is enforced by routing via its reference point (-55.98, -67.29); the total is the sum of the legs either side of it.",
+          "Excluded passage PANAMA is enforced by blocking the searoute network edges tagged 'panama'.",
+          "Passage constraints change the distance from 3,594.3 nm (unconstrained) to 9,972.6 nm (+6,378.3 nm, +177%)."
+        ],
+        "warnings": [
+          "Academic estimate; not for navigation.",
+          "Tocopilla is 114.2 nm from the nearest routing-network node; that access distance is not included in distance_nm. Its approach point is pending geographic review (T03).",
+          "The constrained route is more than 50% longer than the unconstrained route; check that the passage constraints are intended."
+        ],
+        "calculation_version": "0.1.0",
+        "routing_engine": {
+          "name": "searoute-py",
+          "version": "1.6.0",
+          "units": "nautical miles",
+          "default_restrictions": [
+            "northwest"
+          ],
+          "append_orig_dest": false,
+          "network_nodes": 9708,
+          "network_edges": 15970
+        }
+      }
+    },
+    {
+      "benchmark_id": "BM_007",
+      "route_name": "Rotterdam to Durban via Suez",
+      "endpoint": "route",
+      "category": "canal alternative",
+      "request": {
+        "origin_port_id": "NLRTM",
+        "destination_port_id": "ZADUR",
+        "required_passage": "SUEZ"
+      },
+      "required_passage": "SUEZ",
+      "excluded_passage": null,
+      "expected_nm": 7943.0,
+      "tolerance_nm": 250.0,
+      "actual_nm": 7943.3,
+      "difference_nm": 0.3,
+      "passed": true,
+      "passages_used": [
+        "GIBRALTAR",
+        "SUEZ"
+      ],
+      "distance_by_leg_nm": [
+        3357.3,
+        4586.0
+      ],
+      "warnings": [
+        "Academic estimate; not for navigation.",
+        "Passage point SUEZ is 11.0 nm from the nearest routing-network node; the route passes through that node instead."
+      ],
+      "response": {
+        "route_id": "route-557a7a34f6",
+        "status": "success",
+        "distance_nm": 7943.3,
+        "origin": {
+          "port_id": "NLRTM",
+          "port_name": "Rotterdam",
+          "latitude": 51.95,
+          "longitude": 4.14,
+          "location_type": "port"
+        },
+        "destination": {
+          "port_id": "ZADUR",
+          "port_name": "Durban",
+          "latitude": -29.87,
+          "longitude": 31.05,
+          "location_type": "port"
+        },
+        "routing_points": [
+          {
+            "sequence": 1,
+            "role": "origin",
+            "type": "port",
+            "id": "NLRTM",
+            "name": "Rotterdam",
+            "requested_latitude": 51.95,
+            "requested_longitude": 4.14,
+            "network_latitude": 51.961827,
+            "network_longitude": 4.151802,
+            "snap_distance_nm": 0.8
+          },
+          {
+            "sequence": 2,
+            "role": "required_passage",
+            "type": "passage",
+            "id": "SUEZ",
+            "name": "Suez Canal",
+            "requested_latitude": 30.5,
+            "requested_longitude": 32.35,
+            "network_latitude": 30.318359,
+            "network_longitude": 32.382202,
+            "snap_distance_nm": 11.0
+          },
+          {
+            "sequence": 3,
+            "role": "destination",
+            "type": "port",
+            "id": "ZADUR",
+            "name": "Durban",
+            "requested_latitude": -29.87,
+            "requested_longitude": 31.05,
+            "network_latitude": -29.816817,
+            "network_longitude": 31.173706,
+            "snap_distance_nm": 7.2
+          }
+        ],
+        "passages_used": [
+          "GIBRALTAR",
+          "SUEZ"
+        ],
+        "required_passage": "SUEZ",
+        "excluded_passage": null,
+        "distance_by_leg_nm": [
+          3357.3,
+          4586.0
+        ],
+        "unconstrained_distance_nm": 7018.4,
+        "network_passages_traversed": [
+          "babalmandab",
+          "gibraltar",
+          "suez"
+        ],
+        "route_geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              4.151802,
+              51.961827
+            ],
+            [
+              4.069748,
+              51.987629
+            ],
+            [
+              3.9,
+              52
+            ],
+            [
+              3.559619,
+              51.659619
+            ],
+            [
+              3.4,
+              51.5
+            ],
+            [
+              2.356699,
+              51.178984
+            ],
+            [
+              2.1,
+              51.1
+            ],
+            [
+              1.813195,
+              50.988387
+            ],
+            [
+              1.567687,
+              50.892845
+            ],
+            [
+              1.441366,
+              50.849032
+            ],
+            [
+              1.3,
+              50.8
+            ],
+            [
+              1.193894,
+              50.765311
+            ],
+            [
+              0.39288,
+              50.503441
+            ],
+            [
+              -0.343359,
+              50.262748
+            ],
+            [
+              -0.545959,
+              50.196513
+            ],
+            [
+              -0.671539,
+              50.155459
+            ],
+            [
+              -1.3,
+              49.95
+            ],
+            [
+              -1.47977,
+              49.895072
+            ],
+            [
+              -1.665743,
+              49.838248
+            ],
+            [
+              -1.93365,
+              49.75639
+            ],
+            [
+              -1.992006,
+              49.738559
+            ],
+            [
+              -2.39189,
+              49.616376
+            ],
+            [
+              -3.197043,
+              49.370363
+            ],
+            [
+              -3.986163,
+              49.129249
+            ],
+            [
+              -4.030414,
+              49.115729
+            ],
+            [
+              -4.270518,
+              49.042365
+            ],
+            [
+              -5.06401,
+              48.799916
+            ],
+            [
+              -5.5,
+              48.6667
+            ],
+            [
+              -6.698867,
+              47.340067
+            ],
+            [
+              -7.954994,
+              45.668797
+            ],
+            [
+              -8.49576,
+              44.934776
+            ],
+            [
+              -9.019938,
+              43.924891
+            ],
+            [
+              -9.14264,
+              43.688493
+            ],
+            [
+              -9.5,
+              43
+            ],
+            [
+              -9.9844,
+              40.7798
+            ],
+            [
+              -9.6,
+              38.5
+            ],
+            [
+              -9.452092,
+              37.781589
+            ],
+            [
+              -9.25,
+              36.8
+            ],
+            [
+              -8.219465,
+              36.549727
+            ],
+            [
+              -7.26966,
+              36.31906
+            ],
+            [
+              -5.75,
+              35.95
+            ],
+            [
+              -5.354867,
+              35.968819
+            ],
+            [
+              -5.269383,
+              35.97289
+            ],
+            [
+              -4.7,
+              36
+            ],
+            [
+              -3.683043,
+              36.156455
+            ],
+            [
+              -3.264225,
+              36.220888
+            ],
+            [
+              -2.590675,
+              36.324512
+            ],
+            [
+              -2.244793,
+              36.377724
+            ],
+            [
+              -1.62439,
+              36.473171
+            ],
+            [
+              -0.366667,
+              36.666667
+            ],
+            [
+              3.1,
+              37.2
+            ],
+            [
+              7.5,
+              37.4
+            ],
+            [
+              10.373031,
+              37.482087
+            ],
+            [
+              11,
+              37.5
+            ],
+            [
+              11.172235,
+              37.454891
+            ],
+            [
+              11.827836,
+              37.283186
+            ],
+            [
+              12.086301,
+              37.215493
+            ],
+            [
+              12.110644,
+              37.209117
+            ],
+            [
+              13.263819,
+              36.907095
+            ],
+            [
+              15.2,
+              36.4
+            ],
+            [
+              16.726588,
+              36.086854
+            ],
+            [
+              17.902084,
+              35.845726
+            ],
+            [
+              21.407365,
+              35.126694
+            ],
+            [
+              23,
+              34.8
+            ],
+            [
+              24.926664,
+              34.187436
+            ],
+            [
+              25.478721,
+              34.011915
+            ],
+            [
+              26.306431,
+              33.748752
+            ],
+            [
+              27.927542,
+              33.219565
+            ],
+            [
+              28.212434,
+              33.115811
+            ],
+            [
+              28.905525,
+              32.863395
+            ],
+            [
+              30.408377,
+              32.316071
+            ],
+            [
+              32.1,
+              31.7
+            ],
+            [
+              32.359877,
+              31.336373
+            ],
+            [
+              32.310104,
+              31.102922
+            ],
+            [
+              32.382202,
+              30.318359
+            ],
+            [
+              32.557983,
+              30.213982
+            ],
+            [
+              32.6,
+              29.7
+            ],
+            [
+              33.233643,
+              28.444544
+            ],
+            [
+              34.5,
+              27
+            ],
+            [
+              37,
+              23.6
+            ],
+            [
+              37.786499,
+              22.210682
+            ],
+            [
+              38.572998,
+              20.807472
+            ],
+            [
+              41.000977,
+              17.098792
+            ],
+            [
+              42.341309,
+              14.509144
+            ],
+            [
+              42.541058,
+              13.676089
+            ],
+            [
+              43.3,
+              12.7
+            ],
+            [
+              43.746586,
+              12.40439
+            ],
+            [
+              45,
+              12
+            ],
+            [
+              50.856149,
+              12.884027
+            ],
+            [
+              52.3,
+              11.6
+            ],
+            [
+              50.8379,
+              8.3029
+            ],
+            [
+              49.4,
+              5
+            ],
+            [
+              47.812548,
+              0.745717
+            ],
+            [
+              47.058219,
+              -1.280003
+            ],
+            [
+              44.496583,
+              -8.106077
+            ],
+            [
+              43,
+              -12
+            ],
+            [
+              41.7,
+              -15
+            ],
+            [
+              38.929,
+              -19.5234
+            ],
+            [
+              36,
+              -24
+            ],
+            [
+              35.142957,
+              -24.861024
+            ],
+            [
+              34.437034,
+              -25.749552
+            ],
+            [
+              32.920532,
+              -28.449374
+            ],
+            [
+              31.173706,
+              -29.816817
+            ]
+          ]
+        },
+        "assumptions": [
+          "Distances are shortest paths on the searoute-py maritime network, in nautical miles.",
+          "Each requested point is snapped to the nearest network node; the access distance to that node is not included in distance_nm.",
+          "The Arctic 'northwest' passage is blocked by default (searoute-py default).",
+          "Port approach points from the Port Reference tab were used as routing coordinates.",
+          "Required passage SUEZ is enforced by routing via its reference point (30.5, 32.35); the total is the sum of the legs either side of it.",
+          "Passage constraints change the distance from 7,018.4 nm (unconstrained) to 7,943.3 nm (+924.9 nm, +13%)."
+        ],
+        "warnings": [
+          "Academic estimate; not for navigation.",
+          "Passage point SUEZ is 11.0 nm from the nearest routing-network node; the route passes through that node instead."
+        ],
+        "calculation_version": "0.1.0",
+        "routing_engine": {
+          "name": "searoute-py",
+          "version": "1.6.0",
+          "units": "nautical miles",
+          "default_restrictions": [
+            "northwest"
+          ],
+          "append_orig_dest": false,
+          "network_nodes": 9708,
+          "network_edges": 15970
+        }
+      }
+    },
+    {
+      "benchmark_id": "BM_008",
+      "route_name": "Rotterdam to Durban via Cape",
+      "endpoint": "route",
+      "category": "cape alternative",
+      "request": {
+        "origin_port_id": "NLRTM",
+        "destination_port_id": "ZADUR",
+        "required_passage": "CAPE_GOOD_HOPE"
+      },
+      "required_passage": "CAPE_GOOD_HOPE",
+      "excluded_passage": null,
+      "expected_nm": 7179.0,
+      "tolerance_nm": 250.0,
+      "actual_nm": 7178.8,
+      "difference_nm": -0.2,
+      "passed": true,
+      "passages_used": [
+        "CAPE_GOOD_HOPE"
+      ],
+      "distance_by_leg_nm": [
+        6304.2,
+        874.6
+      ],
+      "warnings": [
+        "Academic estimate; not for navigation.",
+        "Passage point CAPE_GOOD_HOPE is 29.9 nm from the nearest routing-network node; the route passes through that node instead."
+      ],
+      "response": {
+        "route_id": "route-46c1e088bd",
+        "status": "success",
+        "distance_nm": 7178.8,
+        "origin": {
+          "port_id": "NLRTM",
+          "port_name": "Rotterdam",
+          "latitude": 51.95,
+          "longitude": 4.14,
+          "location_type": "port"
+        },
+        "destination": {
+          "port_id": "ZADUR",
+          "port_name": "Durban",
+          "latitude": -29.87,
+          "longitude": 31.05,
+          "location_type": "port"
+        },
+        "routing_points": [
+          {
+            "sequence": 1,
+            "role": "origin",
+            "type": "port",
+            "id": "NLRTM",
+            "name": "Rotterdam",
+            "requested_latitude": 51.95,
+            "requested_longitude": 4.14,
+            "network_latitude": 51.961827,
+            "network_longitude": 4.151802,
+            "snap_distance_nm": 0.8
+          },
+          {
+            "sequence": 2,
+            "role": "required_passage",
+            "type": "passage",
+            "id": "CAPE_GOOD_HOPE",
+            "name": "Cape of Good Hope",
+            "requested_latitude": -34.36,
+            "requested_longitude": 18.47,
+            "network_latitude": -33.862433,
+            "network_longitude": 18.428192,
+            "snap_distance_nm": 29.9
+          },
+          {
+            "sequence": 3,
+            "role": "destination",
+            "type": "port",
+            "id": "ZADUR",
+            "name": "Durban",
+            "requested_latitude": -29.87,
+            "requested_longitude": 31.05,
+            "network_latitude": -29.816817,
+            "network_longitude": 31.173706,
+            "snap_distance_nm": 7.2
+          }
+        ],
+        "passages_used": [
+          "CAPE_GOOD_HOPE"
+        ],
+        "required_passage": "CAPE_GOOD_HOPE",
+        "excluded_passage": null,
+        "distance_by_leg_nm": [
+          6304.2,
+          874.6
+        ],
+        "unconstrained_distance_nm": 7018.4,
+        "network_passages_traversed": [
+          "south_africa"
+        ],
+        "route_geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              4.151802,
+              51.961827
+            ],
+            [
+              4.069748,
+              51.987629
+            ],
+            [
+              3.9,
+              52
+            ],
+            [
+              3.559619,
+              51.659619
+            ],
+            [
+              3.4,
+              51.5
+            ],
+            [
+              2.356699,
+              51.178984
+            ],
+            [
+              2.1,
+              51.1
+            ],
+            [
+              1.813195,
+              50.988387
+            ],
+            [
+              1.567687,
+              50.892845
+            ],
+            [
+              1.441366,
+              50.849032
+            ],
+            [
+              1.3,
+              50.8
+            ],
+            [
+              1.193894,
+              50.765311
+            ],
+            [
+              0.39288,
+              50.503441
+            ],
+            [
+              -0.343359,
+              50.262748
+            ],
+            [
+              -0.545959,
+              50.196513
+            ],
+            [
+              -0.671539,
+              50.155459
+            ],
+            [
+              -1.3,
+              49.95
+            ],
+            [
+              -1.47977,
+              49.895072
+            ],
+            [
+              -1.665743,
+              49.838248
+            ],
+            [
+              -1.93365,
+              49.75639
+            ],
+            [
+              -1.992006,
+              49.738559
+            ],
+            [
+              -2.39189,
+              49.616376
+            ],
+            [
+              -3.197043,
+              49.370363
+            ],
+            [
+              -3.986163,
+              49.129249
+            ],
+            [
+              -4.030414,
+              49.115729
+            ],
+            [
+              -4.270518,
+              49.042365
+            ],
+            [
+              -5.06401,
+              48.799916
+            ],
+            [
+              -5.5,
+              48.6667
+            ],
+            [
+              -6.698867,
+              47.340067
+            ],
+            [
+              -7.987368,
+              45.91425
+            ],
+            [
+              -10.063992,
+              43.402334
+            ],
+            [
+              -10.167909,
+              43.146826
+            ],
+            [
+              -10.289669,
+              42.796988
+            ],
+            [
+              -11.070622,
+              40.553191
+            ],
+            [
+              -11.158374,
+              40.301066
+            ],
+            [
+              -11.664545,
+              38.84676
+            ],
+            [
+              -11.81009,
+              38.428587
+            ],
+            [
+              -12.057515,
+              37.717697
+            ],
+            [
+              -12.131862,
+              37.504085
+            ],
+            [
+              -12.262448,
+              37.128892
+            ],
+            [
+              -12.32612,
+              36.945951
+            ],
+            [
+              -12.493983,
+              36.463656
+            ],
+            [
+              -12.608538,
+              36.134522
+            ],
+            [
+              -12.761203,
+              35.695892
+            ],
+            [
+              -12.839781,
+              35.470126
+            ],
+            [
+              -13.114888,
+              34.6797
+            ],
+            [
+              -13.32875,
+              34.065242
+            ],
+            [
+              -13.9051,
+              32.4093
+            ],
+            [
+              -15.172119,
+              29.337503
+            ],
+            [
+              -15.145809,
+              28.538331
+            ],
+            [
+              -15.128174,
+              27.999252
+            ],
+            [
+              -18,
+              21
+            ],
+            [
+              -18,
+              15
+            ],
+            [
+              -17,
+              11
+            ],
+            [
+              -13.4277,
+              5.5302
+            ],
+            [
+              -10,
+              -2e-05
+            ],
+            [
+              -5.531121,
+              -5.586708
+            ],
+            [
+              -1.989182,
+              -10.0146
+            ],
+            [
+              -1.100476,
+              -11.1256
+            ],
+            [
+              0.000405,
+              -12.501846
+            ],
+            [
+              1.7833,
+              -14.7307
+            ],
+            [
+              3.542734,
+              -16.929822
+            ],
+            [
+              5.653262,
+              -19.567777
+            ],
+            [
+              7.89386,
+              -22.368307
+            ],
+            [
+              10.425227,
+              -25.53227
+            ],
+            [
+              12.499733,
+              -28.1252
+            ],
+            [
+              18,
+              -35
+            ],
+            [
+              18.237305,
+              -33.840764
+            ],
+            [
+              18.428192,
+              -33.862433
+            ],
+            [
+              18.237305,
+              -33.840764
+            ],
+            [
+              18,
+              -35
+            ],
+            [
+              22,
+              -35
+            ],
+            [
+              26,
+              -34.5
+            ],
+            [
+              28.5,
+              -33.5
+            ],
+            [
+              31.173706,
+              -29.816817
+            ]
+          ]
+        },
+        "assumptions": [
+          "Distances are shortest paths on the searoute-py maritime network, in nautical miles.",
+          "Each requested point is snapped to the nearest network node; the access distance to that node is not included in distance_nm.",
+          "The Arctic 'northwest' passage is blocked by default (searoute-py default).",
+          "Port approach points from the Port Reference tab were used as routing coordinates.",
+          "Required passage CAPE_GOOD_HOPE is enforced by routing via its reference point (-34.36, 18.47); the total is the sum of the legs either side of it.",
+          "Passage constraints change the distance from 7,018.4 nm (unconstrained) to 7,178.8 nm (+160.4 nm, +2%)."
+        ],
+        "warnings": [
+          "Academic estimate; not for navigation.",
+          "Passage point CAPE_GOOD_HOPE is 29.9 nm from the nearest routing-network node; the route passes through that node instead."
+        ],
+        "calculation_version": "0.1.0",
+        "routing_engine": {
+          "name": "searoute-py",
+          "version": "1.6.0",
+          "units": "nautical miles",
+          "default_restrictions": [
+            "northwest"
+          ],
+          "append_orig_dest": false,
+          "network_nodes": 9708,
+          "network_edges": 15970
+        }
+      }
+    },
+    {
+      "benchmark_id": "BM_009",
+      "route_name": "Synthetic position to Singapore",
+      "endpoint": "route",
+      "category": "position to port",
+      "request": {
+        "origin_position_id": "POS_001",
+        "destination_port_id": "SGSIN"
+      },
+      "required_passage": null,
+      "excluded_passage": null,
+      "expected_nm": 721.0,
+      "tolerance_nm": 150.0,
+      "actual_nm": 720.8,
+      "difference_nm": -0.2,
+      "passed": true,
+      "passages_used": [],
+      "distance_by_leg_nm": [
+        720.8
+      ],
+      "warnings": [
+        "Academic estimate; not for navigation.",
+        "South China Sea sample is 124.0 nm from the nearest routing-network node; that access distance is not included in distance_nm."
+      ],
+      "response": {
+        "route_id": "route-55aa846e95",
+        "status": "success",
+        "distance_nm": 720.8,
+        "origin": {
+          "port_id": null,
+          "port_name": null,
+          "latitude": 10.0,
+          "longitude": 114.0,
+          "location_type": "position",
+          "position_id": "POS_001",
+          "position_name": "South China Sea sample"
+        },
+        "destination": {
+          "port_id": "SGSIN",
+          "port_name": "Singapore",
+          "latitude": 1.2644,
+          "longitude": 103.82,
+          "location_type": "port"
+        },
+        "routing_points": [
+          {
+            "sequence": 1,
+            "role": "origin",
+            "type": "position",
+            "id": "POS_001",
+            "name": "South China Sea sample",
+            "requested_latitude": 10.0,
+            "requested_longitude": 114.0,
+            "network_latitude": 9.797721,
+            "network_longitude": 111.913427,
+            "snap_distance_nm": 124.0
+          },
+          {
+            "sequence": 2,
+            "role": "destination",
+            "type": "port",
+            "id": "SGSIN",
+            "name": "Singapore",
+            "requested_latitude": 1.2644,
+            "requested_longitude": 103.82,
+            "network_latitude": 1.259893,
+            "network_longitude": 103.763466,
+            "snap_distance_nm": 3.4
+          }
+        ],
+        "passages_used": [],
+        "required_passage": null,
+        "excluded_passage": null,
+        "distance_by_leg_nm": [
+          720.8
+        ],
+        "unconstrained_distance_nm": null,
+        "network_passages_traversed": [],
+        "route_geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              111.913427,
+              9.797721
+            ],
+            [
+              109.934071,
+              7.545272
+            ],
+            [
+              104.482294,
+              1.341312
+            ],
+            [
+              104.145848,
+              1.249295
+            ],
+            [
+              103.861103,
+              1.171415
+            ],
+            [
+              103.763466,
+              1.259893
+            ]
+          ]
+        },
+        "assumptions": [
+          "Distances are shortest paths on the searoute-py maritime network, in nautical miles.",
+          "Each requested point is snapped to the nearest network node; the access distance to that node is not included in distance_nm.",
+          "The Arctic 'northwest' passage is blocked by default (searoute-py default).",
+          "Port approach points from the Port Reference tab were used as routing coordinates.",
+          "Vessel positions are synthetic (not real vessel positions)."
+        ],
+        "warnings": [
+          "Academic estimate; not for navigation.",
+          "South China Sea sample is 124.0 nm from the nearest routing-network node; that access distance is not included in distance_nm."
+        ],
+        "calculation_version": "0.1.0",
+        "routing_engine": {
+          "name": "searoute-py",
+          "version": "1.6.0",
+          "units": "nautical miles",
+          "default_restrictions": [
+            "northwest"
+          ],
+          "append_orig_dest": false,
+          "network_nodes": 9708,
+          "network_edges": 15970
+        }
+      }
+    },
+    {
+      "benchmark_id": "BM_010",
+      "route_name": "Multi-leg Asia-Africa voyage",
+      "endpoint": "voyage",
+      "category": "multi-leg",
+      "request": {
+        "origin_port_id": "SGSIN",
+        "destination_port_id": "ZADUR",
+        "intermediate_stops": [
+          "HKHKG",
+          "LKCMB"
+        ]
+      },
+      "required_passage": null,
+      "excluded_passage": null,
+      "expected_nm": 8271.0,
+      "tolerance_nm": 300.0,
+      "actual_nm": 8271.0,
+      "difference_nm": 0.0,
+      "passed": true,
+      "passages_used": [
+        "MALACCA"
+      ],
+      "distance_by_leg_nm": [
+        1438.8,
+        3037.9,
+        3794.3
+      ],
+      "warnings": [
+        "Academic estimate; not for navigation.",
+        "Leg 1: Hong Kong is 14.1 nm from the nearest routing-network node; that access distance is not included in distance_nm. Its approach point is pending geographic review (T03).",
+        "Leg 2: Hong Kong is 14.1 nm from the nearest routing-network node; that access distance is not included in distance_nm. Its approach point is pending geographic review (T03)."
+      ],
+      "response": {
+        "voyage_id": "voyage-86d1811c55",
+        "status": "success",
+        "legs": [
+          {
+            "leg_number": 1,
+            "origin_port_id": "SGSIN",
+            "destination_port_id": "HKHKG",
+            "origin": {
+              "port_id": "SGSIN",
+              "port_name": "Singapore",
+              "latitude": 1.2644,
+              "longitude": 103.82,
+              "location_type": "port"
+            },
+            "destination": {
+              "port_id": "HKHKG",
+              "port_name": "Hong Kong",
+              "latitude": 22.29,
+              "longitude": 114.17,
+              "location_type": "port"
+            },
+            "distance_nm": 1438.8,
+            "passages_used": [],
+            "required_passage": null,
+            "excluded_passage": null,
+            "routing_points": [
+              {
+                "sequence": 1,
+                "role": "origin",
+                "type": "port",
+                "id": "SGSIN",
+                "name": "Singapore",
+                "requested_latitude": 1.2644,
+                "requested_longitude": 103.82,
+                "network_latitude": 1.259893,
+                "network_longitude": 103.763466,
+                "snap_distance_nm": 3.4
+              },
+              {
+                "sequence": 2,
+                "role": "destination",
+                "type": "port",
+                "id": "HKHKG",
+                "name": "Hong Kong",
+                "requested_latitude": 22.29,
+                "requested_longitude": 114.17,
+                "network_latitude": 22.253513,
+                "network_longitude": 114.421234,
+                "snap_distance_nm": 14.1
+              }
+            ],
+            "unconstrained_distance_nm": null,
+            "route_geometry": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  103.763466,
+                  1.259893
+                ],
+                [
+                  103.861103,
+                  1.171415
+                ],
+                [
+                  104.145848,
+                  1.249295
+                ],
+                [
+                  104.482294,
+                  1.341312
+                ],
+                [
+                  107.3207,
+                  7.6091
+                ],
+                [
+                  109.758911,
+                  12.146746
+                ],
+                [
+                  110.551147,
+                  13.789771
+                ],
+                [
+                  110.928955,
+                  15.644197
+                ],
+                [
+                  111.390381,
+                  17.219511
+                ],
+                [
+                  114.1,
+                  21.7
+                ],
+                [
+                  114.216614,
+                  21.932855
+                ],
+                [
+                  114.426727,
+                  22.070369
+                ],
+                [
+                  114.421234,
+                  22.253513
+                ]
+              ]
+            }
+          },
+          {
+            "leg_number": 2,
+            "origin_port_id": "HKHKG",
+            "destination_port_id": "LKCMB",
+            "origin": {
+              "port_id": "HKHKG",
+              "port_name": "Hong Kong",
+              "latitude": 22.29,
+              "longitude": 114.17,
+              "location_type": "port"
+            },
+            "destination": {
+              "port_id": "LKCMB",
+              "port_name": "Colombo",
+              "latitude": 6.95,
+              "longitude": 79.85,
+              "location_type": "port"
+            },
+            "distance_nm": 3037.9,
+            "passages_used": [
+              "MALACCA"
+            ],
+            "required_passage": null,
+            "excluded_passage": null,
+            "routing_points": [
+              {
+                "sequence": 1,
+                "role": "origin",
+                "type": "port",
+                "id": "HKHKG",
+                "name": "Hong Kong",
+                "requested_latitude": 22.29,
+                "requested_longitude": 114.17,
+                "network_latitude": 22.253513,
+                "network_longitude": 114.421234,
+                "snap_distance_nm": 14.1
+              },
+              {
+                "sequence": 2,
+                "role": "destination",
+                "type": "port",
+                "id": "LKCMB",
+                "name": "Colombo",
+                "requested_latitude": 6.95,
+                "requested_longitude": 79.85,
+                "network_latitude": 6.994585,
+                "network_longitude": 79.789581,
+                "snap_distance_nm": 4.5
+              }
+            ],
+            "unconstrained_distance_nm": null,
+            "route_geometry": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  114.421234,
+                  22.253513
+                ],
+                [
+                  114.426727,
+                  22.070369
+                ],
+                [
+                  114.216614,
+                  21.932855
+                ],
+                [
+                  114.1,
+                  21.7
+                ],
+                [
+                  111.390381,
+                  17.219511
+                ],
+                [
+                  110.928955,
+                  15.644197
+                ],
+                [
+                  110.551147,
+                  13.789771
+                ],
+                [
+                  109.758911,
+                  12.146746
+                ],
+                [
+                  107.3207,
+                  7.6091
+                ],
+                [
+                  104.482294,
+                  1.341312
+                ],
+                [
+                  104.145848,
+                  1.249295
+                ],
+                [
+                  103.861103,
+                  1.171415
+                ],
+                [
+                  103.6,
+                  1.1
+                ],
+                [
+                  102,
+                  2
+                ],
+                [
+                  101.316415,
+                  2.586072
+                ],
+                [
+                  100.6,
+                  3.2
+                ],
+                [
+                  99.763807,
+                  4.084523
+                ],
+                [
+                  98.128129,
+                  5.811729
+                ],
+                [
+                  94.326449,
+                  6.157121
+                ],
+                [
+                  90,
+                  6.4664
+                ],
+                [
+                  85.9479,
+                  6.1983
+                ],
+                [
+                  81.9,
+                  5.9
+                ],
+                [
+                  80.1,
+                  5.8
+                ],
+                [
+                  79.82666,
+                  6.424484
+                ],
+                [
+                  79.789581,
+                  6.994585
+                ]
+              ]
+            }
+          },
+          {
+            "leg_number": 3,
+            "origin_port_id": "LKCMB",
+            "destination_port_id": "ZADUR",
+            "origin": {
+              "port_id": "LKCMB",
+              "port_name": "Colombo",
+              "latitude": 6.95,
+              "longitude": 79.85,
+              "location_type": "port"
+            },
+            "destination": {
+              "port_id": "ZADUR",
+              "port_name": "Durban",
+              "latitude": -29.87,
+              "longitude": 31.05,
+              "location_type": "port"
+            },
+            "distance_nm": 3794.3,
+            "passages_used": [],
+            "required_passage": null,
+            "excluded_passage": null,
+            "routing_points": [
+              {
+                "sequence": 1,
+                "role": "origin",
+                "type": "port",
+                "id": "LKCMB",
+                "name": "Colombo",
+                "requested_latitude": 6.95,
+                "requested_longitude": 79.85,
+                "network_latitude": 6.994585,
+                "network_longitude": 79.789581,
+                "snap_distance_nm": 4.5
+              },
+              {
+                "sequence": 2,
+                "role": "destination",
+                "type": "port",
+                "id": "ZADUR",
+                "name": "Durban",
+                "requested_latitude": -29.87,
+                "requested_longitude": 31.05,
+                "network_latitude": -29.816817,
+                "network_longitude": 31.173706,
+                "snap_distance_nm": 7.2
+              }
+            ],
+            "unconstrained_distance_nm": null,
+            "route_geometry": {
+              "type": "LineString",
+              "coordinates": [
+                [
+                  79.789581,
+                  6.994585
+                ],
+                [
+                  78.868856,
+                  6.674926
+                ],
+                [
+                  78.019032,
+                  6.387793
+                ],
+                [
+                  73.845613,
+                  4.845613
+                ],
+                [
+                  73.560879,
+                  4.143884
+                ],
+                [
+                  70,
+                  -3e-05
+                ],
+                [
+                  67.5237,
+                  -2.512
+                ],
+                [
+                  67.449371,
+                  -2.586972
+                ],
+                [
+                  66.708666,
+                  -3.334083
+                ],
+                [
+                  64.9999,
+                  -5.057193
+                ],
+                [
+                  62.5333,
+                  -7.5169
+                ],
+                [
+                  60,
+                  -10
+                ],
+                [
+                  54.286051,
+                  -10.031461
+                ],
+                [
+                  50,
+                  -10
+                ],
+                [
+                  46.9055,
+                  -12.783871
+                ],
+                [
+                  42.51709,
+                  -16.678293
+                ],
+                [
+                  36,
+                  -24
+                ],
+                [
+                  35.142957,
+                  -24.861024
+                ],
+                [
+                  34.437034,
+                  -25.749552
+                ],
+                [
+                  32.920532,
+                  -28.449374
+                ],
+                [
+                  31.173706,
+                  -29.816817
+                ]
+              ]
+            }
+          }
+        ],
+        "distance_by_leg_nm": [
+          1438.8,
+          3037.9,
+          3794.3
+        ],
+        "total_distance_nm": 8271.0,
+        "passages_used": [
+          "MALACCA"
+        ],
+        "assumptions": [
+          "Distances are shortest paths on the searoute-py maritime network, in nautical miles.",
+          "Each requested point is snapped to the nearest network node; the access distance to that node is not included in distance_nm.",
+          "The Arctic 'northwest' passage is blocked by default (searoute-py default).",
+          "Port approach points from the Port Reference tab were used as routing coordinates.",
+          "total_distance_nm is the sum of the leg distances (each rounded to 0.1 nm)."
+        ],
+        "warnings": [
+          "Academic estimate; not for navigation.",
+          "Leg 1: Hong Kong is 14.1 nm from the nearest routing-network node; that access distance is not included in distance_nm. Its approach point is pending geographic review (T03).",
+          "Leg 2: Hong Kong is 14.1 nm from the nearest routing-network node; that access distance is not included in distance_nm. Its approach point is pending geographic review (T03)."
+        ],
+        "calculation_version": "0.1.0",
+        "routing_engine": {
+          "name": "searoute-py",
+          "version": "1.6.0",
+          "units": "nautical miles",
+          "default_restrictions": [
+            "northwest"
+          ],
+          "append_orig_dest": false,
+          "network_nodes": 9708,
+          "network_edges": 15970
+        }
+      }
+    }
+  ]
+}

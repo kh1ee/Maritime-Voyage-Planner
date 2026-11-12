@@ -1,0 +1,1102 @@
+{
+  "task": "T02",
+  "workbook": "/Users/brosman/Documents/member1_work/voyage_planner_datasets.xlsx",
+  "workbook_sha256": "6e3ca0c922f07820d75b6e261bc05e0bb1193ba746a0fc66b49be487a365cb99",
+  "reference_files": [
+    {
+      "path": "/Users/brosman/Documents/member1_work/UNLOCODE CodeListPart1.csv",
+      "sha256": "a578f1caa76850f0d46ff7dab71bed53be84f8a0b0b3b6157e7de6d169ba37f2"
+    },
+    {
+      "path": "/Users/brosman/Documents/member1_work/UNLOCODE CodeListPart2.csv",
+      "sha256": "b63c997fd42acfffbc8b3d8dd4ad6d97182dd8a0f123f6fa29bad41219b68dcc"
+    },
+    {
+      "path": "/Users/brosman/Documents/member1_work/UNLOCODE CodeListPart3.csv",
+      "sha256": "65898aef20602d63b5394af4ebb2ddb1f0d0ad2ee0841c07040046b111a9371d"
+    }
+  ],
+  "reference_release": "Not established from supplied filenames; record original download release separately",
+  "checks": {
+    "expected_port_count": 29,
+    "actual_port_count": 29,
+    "port_count_matches": true,
+    "duplicate_project_port_ids": [],
+    "duplicate_supplied_un_locodes": []
+  },
+  "matched_identifiers": 28,
+  "ports_requiring_review": [
+    "CNSHA",
+    "GIIBZ",
+    "PAMIT"
+  ],
+  "limitations": [
+    "Matching a code does not establish the intended port, terminal, or coordinate accuracy.",
+    "UN/LOCODE coordinates are location reference points, not verified approach points.",
+    "Coordinate differences are descriptive, not official pass/fail tolerances.",
+    "No source values, project IDs, or benchmark targets were changed."
+  ],
+  "ports": [
+    {
+      "port_id": "SGSIN",
+      "port_name": "Singapore",
+      "supplied_un_locode": "SGSIN",
+      "lookup_code": "SGSIN",
+      "identifier_match": true,
+      "reference_matches": [
+        {
+          "name": "Singapore",
+          "name_without_diacritics": "Singapore",
+          "subdivision": "",
+          "function": "1--45---",
+          "status": "AI",
+          "record_date_code": "2407",
+          "coordinates": "0117N 10351E",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart3.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "issues": [],
+      "coordinates_lon_lat": [
+        103.82,
+        1.2644
+      ],
+      "approach_coordinates_lon_lat": [
+        103.82,
+        1.2644
+      ],
+      "reference_coordinates_lon_lat": [
+        103.85,
+        1.2833333333333332
+      ],
+      "distance_to_reference_point_nm": 2.13,
+      "status": "CHECKS_PASSED"
+    },
+    {
+      "port_id": "USHOU",
+      "port_name": "Houston",
+      "supplied_un_locode": "USHOU",
+      "lookup_code": "USHOU",
+      "identifier_match": true,
+      "reference_matches": [
+        {
+          "name": "Houston",
+          "name_without_diacritics": "Houston",
+          "subdivision": "TX",
+          "function": "1-345---",
+          "status": "AI",
+          "record_date_code": "1207",
+          "coordinates": "2945N 09521W",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart3.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "issues": [],
+      "coordinates_lon_lat": [
+        -95.0,
+        29.73
+      ],
+      "approach_coordinates_lon_lat": [
+        -95.0,
+        29.73
+      ],
+      "reference_coordinates_lon_lat": [
+        -95.35,
+        29.75
+      ],
+      "distance_to_reference_point_nm": 18.286,
+      "status": "CHECKS_PASSED"
+    },
+    {
+      "port_id": "NLRTM",
+      "port_name": "Rotterdam",
+      "supplied_un_locode": "NLRTM",
+      "lookup_code": "NLRTM",
+      "identifier_match": true,
+      "reference_matches": [
+        {
+          "name": "Rotterdam",
+          "name_without_diacritics": "Rotterdam",
+          "subdivision": "ZH",
+          "function": "12345---",
+          "status": "AF",
+          "record_date_code": "0501",
+          "coordinates": "5155N 00430E",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart2.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "issues": [],
+      "coordinates_lon_lat": [
+        4.14,
+        51.95
+      ],
+      "approach_coordinates_lon_lat": [
+        4.14,
+        51.95
+      ],
+      "reference_coordinates_lon_lat": [
+        4.5,
+        51.916666666666664
+      ],
+      "distance_to_reference_point_nm": 13.476,
+      "status": "CHECKS_PASSED"
+    },
+    {
+      "port_id": "ZADUR",
+      "port_name": "Durban",
+      "supplied_un_locode": "ZADUR",
+      "lookup_code": "ZADUR",
+      "identifier_match": true,
+      "reference_matches": [
+        {
+          "name": "Durban",
+          "name_without_diacritics": "Durban",
+          "subdivision": "KZN",
+          "function": "12345---",
+          "status": "AI",
+          "record_date_code": "1601",
+          "coordinates": "2951S 03101E",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart3.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "issues": [],
+      "coordinates_lon_lat": [
+        31.05,
+        -29.87
+      ],
+      "approach_coordinates_lon_lat": [
+        31.05,
+        -29.87
+      ],
+      "reference_coordinates_lon_lat": [
+        31.016666666666666,
+        -29.85
+      ],
+      "distance_to_reference_point_nm": 2.111,
+      "status": "CHECKS_PASSED"
+    },
+    {
+      "port_id": "CLTOQ",
+      "port_name": "Tocopilla",
+      "supplied_un_locode": "CLTOQ",
+      "lookup_code": "CLTOQ",
+      "identifier_match": true,
+      "reference_matches": [
+        {
+          "name": "Tocopilla",
+          "name_without_diacritics": "Tocopilla",
+          "subdivision": "AN",
+          "function": "1--4----",
+          "status": "AI",
+          "record_date_code": "0201",
+          "coordinates": "2205S 07011W",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart1.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "issues": [],
+      "coordinates_lon_lat": [
+        -70.2,
+        -22.09
+      ],
+      "approach_coordinates_lon_lat": [
+        -70.2,
+        -22.09
+      ],
+      "reference_coordinates_lon_lat": [
+        -70.18333333333334,
+        -22.083333333333332
+      ],
+      "distance_to_reference_point_nm": 1.01,
+      "status": "CHECKS_PASSED"
+    },
+    {
+      "port_id": "USNYC",
+      "port_name": "New York",
+      "supplied_un_locode": "USNYC",
+      "lookup_code": "USNYC",
+      "identifier_match": true,
+      "reference_matches": [
+        {
+          "name": "New York",
+          "name_without_diacritics": "New York",
+          "subdivision": "NY",
+          "function": "12345---",
+          "status": "AI",
+          "record_date_code": "0401",
+          "coordinates": "4042N 07400W",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart3.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "issues": [],
+      "coordinates_lon_lat": [
+        -74.04,
+        40.68
+      ],
+      "approach_coordinates_lon_lat": [
+        -74.04,
+        40.68
+      ],
+      "reference_coordinates_lon_lat": [
+        -74.0,
+        40.7
+      ],
+      "distance_to_reference_point_nm": 2.181,
+      "status": "CHECKS_PASSED"
+    },
+    {
+      "port_id": "BRSSZ",
+      "port_name": "Santos",
+      "supplied_un_locode": "BRSSZ",
+      "lookup_code": "BRSSZ",
+      "identifier_match": true,
+      "reference_matches": [
+        {
+          "name": "Santos",
+          "name_without_diacritics": "Santos",
+          "subdivision": "SP",
+          "function": "123--6--",
+          "status": "AA",
+          "record_date_code": "2107",
+          "coordinates": "2356S 04619W",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart1.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "issues": [],
+      "coordinates_lon_lat": [
+        -46.33,
+        -23.96
+      ],
+      "approach_coordinates_lon_lat": [
+        -46.33,
+        -23.96
+      ],
+      "reference_coordinates_lon_lat": [
+        -46.31666666666667,
+        -23.933333333333334
+      ],
+      "distance_to_reference_point_nm": 1.76,
+      "status": "CHECKS_PASSED"
+    },
+    {
+      "port_id": "CNSHA",
+      "port_name": "Shanghai",
+      "supplied_un_locode": "CNSHA",
+      "lookup_code": "CNSHA",
+      "identifier_match": true,
+      "reference_matches": [
+        {
+          "name": "Shanghai Hongqiao International Apt",
+          "name_without_diacritics": "Shanghai Hongqiao International Apt",
+          "subdivision": "SH",
+          "function": "---4----",
+          "status": "AS",
+          "record_date_code": "1601",
+          "coordinates": "",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart1.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "issues": [
+        "Reference function does not identify a maritime port",
+        "CNSHA identifies Hongqiao airport in these references; review Shanghai city/port identity separately"
+      ],
+      "coordinates_lon_lat": [
+        121.49,
+        31.23
+      ],
+      "approach_coordinates_lon_lat": [
+        121.49,
+        31.23
+      ],
+      "reference_coordinates_lon_lat": null,
+      "distance_to_reference_point_nm": null,
+      "identity_review_candidates": {
+        "CNSGH": [
+          {
+            "name": "Shanghai",
+            "name_without_diacritics": "Shanghai",
+            "subdivision": "SH",
+            "function": "12345---",
+            "status": "AS",
+            "record_date_code": "1401",
+            "coordinates": "3114N 12129E",
+            "change_indicator": "",
+            "file": "UNLOCODE CodeListPart1.csv",
+            "encoding": "utf-8-sig"
+          }
+        ],
+        "CNSHG": [
+          {
+            "name": "Shanghai Pt",
+            "name_without_diacritics": "Shanghai Pt",
+            "subdivision": "SH",
+            "function": "1-------",
+            "status": "AS",
+            "record_date_code": "2407",
+            "coordinates": "3038N 12204E",
+            "change_indicator": "",
+            "file": "UNLOCODE CodeListPart1.csv",
+            "encoding": "utf-8-sig"
+          }
+        ]
+      },
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "port_id": "HKHKG",
+      "port_name": "Hong Kong",
+      "supplied_un_locode": "HKHKG",
+      "lookup_code": "HKHKG",
+      "identifier_match": true,
+      "reference_matches": [
+        {
+          "name": "Hong Kong",
+          "name_without_diacritics": "Hong Kong",
+          "subdivision": "",
+          "function": "1--45---",
+          "status": "AI",
+          "record_date_code": "2407",
+          "coordinates": "2219N 11410E",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart2.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "issues": [],
+      "coordinates_lon_lat": [
+        114.17,
+        22.29
+      ],
+      "approach_coordinates_lon_lat": [
+        114.17,
+        22.29
+      ],
+      "reference_coordinates_lon_lat": [
+        114.16666666666667,
+        22.316666666666666
+      ],
+      "distance_to_reference_point_nm": 1.612,
+      "status": "CHECKS_PASSED"
+    },
+    {
+      "port_id": "LKCMB",
+      "port_name": "Colombo",
+      "supplied_un_locode": "LKCMB",
+      "lookup_code": "LKCMB",
+      "identifier_match": true,
+      "reference_matches": [
+        {
+          "name": "Colombo",
+          "name_without_diacritics": "Colombo",
+          "subdivision": "11",
+          "function": "12345---",
+          "status": "AI",
+          "record_date_code": "1601",
+          "coordinates": "0655N 07951E",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart2.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "issues": [],
+      "coordinates_lon_lat": [
+        79.85,
+        6.95
+      ],
+      "approach_coordinates_lon_lat": [
+        79.85,
+        6.95
+      ],
+      "reference_coordinates_lon_lat": [
+        79.85,
+        6.916666666666667
+      ],
+      "distance_to_reference_point_nm": 2.001,
+      "status": "CHECKS_PASSED"
+    },
+    {
+      "port_id": "INBOM",
+      "port_name": "Mumbai",
+      "supplied_un_locode": "INBOM",
+      "lookup_code": "INBOM",
+      "identifier_match": true,
+      "reference_matches": [
+        {
+          "name": "Mumbai (ex Bombay)",
+          "name_without_diacritics": "Mumbai (ex Bombay)",
+          "subdivision": "MH",
+          "function": "123456--",
+          "status": "AA",
+          "record_date_code": "0501",
+          "coordinates": "1858N 07249E",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart2.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "issues": [],
+      "coordinates_lon_lat": [
+        72.84,
+        18.94
+      ],
+      "approach_coordinates_lon_lat": [
+        72.84,
+        18.94
+      ],
+      "reference_coordinates_lon_lat": [
+        72.81666666666666,
+        18.966666666666665
+      ],
+      "distance_to_reference_point_nm": 2.078,
+      "status": "CHECKS_PASSED"
+    },
+    {
+      "port_id": "AEFJR",
+      "port_name": "Fujairah",
+      "supplied_un_locode": "AEFJR",
+      "lookup_code": "AEFJR",
+      "identifier_match": true,
+      "reference_matches": [
+        {
+          "name": "Al Fujayrah",
+          "name_without_diacritics": "Al Fujayrah",
+          "subdivision": "FU",
+          "function": "1--4----",
+          "status": "AI",
+          "record_date_code": "0212",
+          "coordinates": "2507N 05620E",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart1.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "issues": [],
+      "coordinates_lon_lat": [
+        56.36,
+        25.12
+      ],
+      "approach_coordinates_lon_lat": [
+        56.36,
+        25.12
+      ],
+      "reference_coordinates_lon_lat": [
+        56.333333333333336,
+        25.116666666666667
+      ],
+      "distance_to_reference_point_nm": 1.463,
+      "status": "CHECKS_PASSED"
+    },
+    {
+      "port_id": "EGPSD",
+      "port_name": "Port Said",
+      "supplied_un_locode": "EGPSD",
+      "lookup_code": "EGPSD",
+      "identifier_match": true,
+      "reference_matches": [
+        {
+          "name": "Port Said",
+          "name_without_diacritics": "Port Said",
+          "subdivision": "",
+          "function": "1--4----",
+          "status": "AI",
+          "record_date_code": "9601",
+          "coordinates": "",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart1.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "issues": [],
+      "coordinates_lon_lat": [
+        32.3,
+        31.26
+      ],
+      "approach_coordinates_lon_lat": [
+        32.3,
+        31.26
+      ],
+      "reference_coordinates_lon_lat": null,
+      "distance_to_reference_point_nm": null,
+      "status": "CHECKS_PASSED"
+    },
+    {
+      "port_id": "EGSUZ",
+      "port_name": "Suez",
+      "supplied_un_locode": "EGSUZ",
+      "lookup_code": "EGSUZ",
+      "identifier_match": true,
+      "reference_matches": [
+        {
+          "name": "As Suways (Suez)",
+          "name_without_diacritics": "As Suways (Suez)",
+          "subdivision": "SUZ",
+          "function": "1-3-----",
+          "status": "RL",
+          "record_date_code": "1101",
+          "coordinates": "2958N 03231E",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart1.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "issues": [],
+      "coordinates_lon_lat": [
+        32.55,
+        29.95
+      ],
+      "approach_coordinates_lon_lat": [
+        32.55,
+        29.95
+      ],
+      "reference_coordinates_lon_lat": [
+        32.516666666666666,
+        29.966666666666665
+      ],
+      "distance_to_reference_point_nm": 2.002,
+      "status": "CHECKS_PASSED"
+    },
+    {
+      "port_id": "GIIBZ",
+      "port_name": "Gibraltar",
+      "supplied_un_locode": "GIIBZ",
+      "lookup_code": "GIIBZ",
+      "identifier_match": false,
+      "reference_matches": [],
+      "issues": [
+        "UN/LOCODE absent from supplied reference files",
+        "Gibraltar candidate GIGIB exists; retain project port_id GIIBZ"
+      ],
+      "coordinates_lon_lat": [
+        -5.35,
+        36.14
+      ],
+      "approach_coordinates_lon_lat": [
+        -5.35,
+        36.14
+      ],
+      "proposed_official_un_locode": "GIGIB",
+      "proposal_evidence": [
+        {
+          "name": "Gibraltar",
+          "name_without_diacritics": "Gibraltar",
+          "subdivision": "",
+          "function": "1--45---",
+          "status": "AI",
+          "record_date_code": "9601",
+          "coordinates": "",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart2.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "port_id": "ESALG",
+      "port_name": "Algeciras",
+      "supplied_un_locode": "ESALG",
+      "lookup_code": "ESALG",
+      "identifier_match": true,
+      "reference_matches": [
+        {
+          "name": "Algeciras",
+          "name_without_diacritics": "Algeciras",
+          "subdivision": "",
+          "function": "1-------",
+          "status": "AI",
+          "record_date_code": "9704",
+          "coordinates": "",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart1.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "issues": [],
+      "coordinates_lon_lat": [
+        -5.44,
+        36.13
+      ],
+      "approach_coordinates_lon_lat": [
+        -5.44,
+        36.13
+      ],
+      "reference_coordinates_lon_lat": null,
+      "distance_to_reference_point_nm": null,
+      "status": "CHECKS_PASSED"
+    },
+    {
+      "port_id": "ZACPT",
+      "port_name": "Cape Town",
+      "supplied_un_locode": "ZACPT",
+      "lookup_code": "ZACPT",
+      "identifier_match": true,
+      "reference_matches": [
+        {
+          "name": "Cape Town",
+          "name_without_diacritics": "Cape Town",
+          "subdivision": "WC",
+          "function": "12345---",
+          "status": "AF",
+          "record_date_code": "1207",
+          "coordinates": "3355S 01825E",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart3.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "issues": [],
+      "coordinates_lon_lat": [
+        18.43,
+        -33.92
+      ],
+      "approach_coordinates_lon_lat": [
+        18.43,
+        -33.92
+      ],
+      "reference_coordinates_lon_lat": [
+        18.416666666666668,
+        -33.916666666666664
+      ],
+      "distance_to_reference_point_nm": 0.694,
+      "status": "CHECKS_PASSED"
+    },
+    {
+      "port_id": "ZARCB",
+      "port_name": "Richards Bay",
+      "supplied_un_locode": "ZARCB",
+      "lookup_code": "ZARCB",
+      "identifier_match": true,
+      "reference_matches": [
+        {
+          "name": "Richards Bay",
+          "name_without_diacritics": "Richards Bay",
+          "subdivision": "",
+          "function": "1--4----",
+          "status": "AF",
+          "record_date_code": "9501",
+          "coordinates": "",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart3.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "issues": [],
+      "coordinates_lon_lat": [
+        32.04,
+        -28.8
+      ],
+      "approach_coordinates_lon_lat": [
+        32.04,
+        -28.8
+      ],
+      "reference_coordinates_lon_lat": null,
+      "distance_to_reference_point_nm": null,
+      "status": "CHECKS_PASSED"
+    },
+    {
+      "port_id": "AUFRE",
+      "port_name": "Fremantle",
+      "supplied_un_locode": "AUFRE",
+      "lookup_code": "AUFRE",
+      "identifier_match": true,
+      "reference_matches": [
+        {
+          "name": "Fremantle",
+          "name_without_diacritics": "Fremantle",
+          "subdivision": "WA",
+          "function": "1--4----",
+          "status": "AC",
+          "record_date_code": "9511",
+          "coordinates": "",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart1.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "issues": [],
+      "coordinates_lon_lat": [
+        115.74,
+        -32.05
+      ],
+      "approach_coordinates_lon_lat": [
+        115.74,
+        -32.05
+      ],
+      "reference_coordinates_lon_lat": null,
+      "distance_to_reference_point_nm": null,
+      "status": "CHECKS_PASSED"
+    },
+    {
+      "port_id": "AUMEL",
+      "port_name": "Melbourne",
+      "supplied_un_locode": "AUMEL",
+      "lookup_code": "AUMEL",
+      "identifier_match": true,
+      "reference_matches": [
+        {
+          "name": "Melbourne",
+          "name_without_diacritics": "Melbourne",
+          "subdivision": "VIC",
+          "function": "12345---",
+          "status": "AC",
+          "record_date_code": "0307",
+          "coordinates": "3749S 14458E",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart1.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "issues": [],
+      "coordinates_lon_lat": [
+        144.92,
+        -37.84
+      ],
+      "approach_coordinates_lon_lat": [
+        144.92,
+        -37.84
+      ],
+      "reference_coordinates_lon_lat": [
+        144.96666666666667,
+        -37.81666666666667
+      ],
+      "distance_to_reference_point_nm": 2.619,
+      "status": "CHECKS_PASSED"
+    },
+    {
+      "port_id": "AUSYD",
+      "port_name": "Sydney",
+      "supplied_un_locode": "AUSYD",
+      "lookup_code": "AUSYD",
+      "identifier_match": true,
+      "reference_matches": [
+        {
+          "name": "Sydney",
+          "name_without_diacritics": "Sydney",
+          "subdivision": "NSW",
+          "function": "12345---",
+          "status": "AC",
+          "record_date_code": "0307",
+          "coordinates": "3351S 15112E",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart1.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "issues": [],
+      "coordinates_lon_lat": [
+        151.2,
+        -33.85
+      ],
+      "approach_coordinates_lon_lat": [
+        151.2,
+        -33.85
+      ],
+      "reference_coordinates_lon_lat": [
+        151.2,
+        -33.85
+      ],
+      "distance_to_reference_point_nm": 0.0,
+      "status": "CHECKS_PASSED"
+    },
+    {
+      "port_id": "PAPTY",
+      "port_name": "Panama City",
+      "supplied_un_locode": "PAPTY",
+      "lookup_code": "PAPTY",
+      "identifier_match": true,
+      "reference_matches": [
+        {
+          "name": "Panamá, Ciudad de",
+          "name_without_diacritics": "Panama, Ciudad de",
+          "subdivision": "8",
+          "function": "1-345---",
+          "status": "AI",
+          "record_date_code": "0407",
+          "coordinates": "0858N 07932W",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart3.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "issues": [],
+      "coordinates_lon_lat": [
+        -79.53,
+        8.95
+      ],
+      "approach_coordinates_lon_lat": [
+        -79.53,
+        8.95
+      ],
+      "reference_coordinates_lon_lat": [
+        -79.53333333333333,
+        8.966666666666667
+      ],
+      "distance_to_reference_point_nm": 1.02,
+      "status": "CHECKS_PASSED"
+    },
+    {
+      "port_id": "PAMIT",
+      "port_name": "Colon",
+      "supplied_un_locode": "PAMIT",
+      "lookup_code": "PAMIT",
+      "identifier_match": true,
+      "reference_matches": [
+        {
+          "name": "Manzanillo",
+          "name_without_diacritics": "Manzanillo",
+          "subdivision": "",
+          "function": "123-----",
+          "status": "AI",
+          "record_date_code": "9701",
+          "coordinates": "",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart3.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "issues": [
+        "PAMIT identifies Manzanillo; reconcile supplied Colon/Cristobal label and terminal scope"
+      ],
+      "coordinates_lon_lat": [
+        -79.9,
+        9.36
+      ],
+      "approach_coordinates_lon_lat": [
+        -79.9,
+        9.36
+      ],
+      "reference_coordinates_lon_lat": null,
+      "distance_to_reference_point_nm": null,
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "port_id": "CLVAP",
+      "port_name": "Valparaiso",
+      "supplied_un_locode": "CLVAP",
+      "lookup_code": "CLVAP",
+      "identifier_match": true,
+      "reference_matches": [
+        {
+          "name": "Valparaiso",
+          "name_without_diacritics": "Valparaiso",
+          "subdivision": "VS",
+          "function": "1234----",
+          "status": "AI",
+          "record_date_code": "0501",
+          "coordinates": "3302S 07138W",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart1.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "issues": [],
+      "coordinates_lon_lat": [
+        -71.63,
+        -33.04
+      ],
+      "approach_coordinates_lon_lat": [
+        -71.63,
+        -33.04
+      ],
+      "reference_coordinates_lon_lat": [
+        -71.63333333333334,
+        -33.03333333333333
+      ],
+      "distance_to_reference_point_nm": 0.434,
+      "status": "CHECKS_PASSED"
+    },
+    {
+      "port_id": "PECLL",
+      "port_name": "Callao",
+      "supplied_un_locode": "PECLL",
+      "lookup_code": "PECLL",
+      "identifier_match": true,
+      "reference_matches": [
+        {
+          "name": "Callao",
+          "name_without_diacritics": "Callao",
+          "subdivision": "LMA",
+          "function": "1-3-----",
+          "status": "AI",
+          "record_date_code": "2407",
+          "coordinates": "1203S 07708W",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart3.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "issues": [],
+      "coordinates_lon_lat": [
+        -77.15,
+        -12.05
+      ],
+      "approach_coordinates_lon_lat": [
+        -77.15,
+        -12.05
+      ],
+      "reference_coordinates_lon_lat": [
+        -77.13333333333334,
+        -12.05
+      ],
+      "distance_to_reference_point_nm": 0.979,
+      "status": "CHECKS_PASSED"
+    },
+    {
+      "port_id": "ARBUE",
+      "port_name": "Buenos Aires",
+      "supplied_un_locode": "ARBUE",
+      "lookup_code": "ARBUE",
+      "identifier_match": true,
+      "reference_matches": [
+        {
+          "name": "Buenos Aires",
+          "name_without_diacritics": "Buenos Aires",
+          "subdivision": "C",
+          "function": "12345---",
+          "status": "AI",
+          "record_date_code": "0401",
+          "coordinates": "3435S 05840W",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart1.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "issues": [],
+      "coordinates_lon_lat": [
+        -58.37,
+        -34.6
+      ],
+      "approach_coordinates_lon_lat": [
+        -58.37,
+        -34.6
+      ],
+      "reference_coordinates_lon_lat": [
+        -58.666666666666664,
+        -34.583333333333336
+      ],
+      "distance_to_reference_point_nm": 14.697,
+      "status": "CHECKS_PASSED"
+    },
+    {
+      "port_id": "BRRIO",
+      "port_name": "Rio de Janeiro",
+      "supplied_un_locode": "BRRIO",
+      "lookup_code": "BRRIO",
+      "identifier_match": true,
+      "reference_matches": [
+        {
+          "name": "Rio de Janeiro",
+          "name_without_diacritics": "Rio de Janeiro",
+          "subdivision": "RJ",
+          "function": "1234567-",
+          "status": "AA",
+          "record_date_code": "2107",
+          "coordinates": "2252S 04313W",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart1.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "issues": [],
+      "coordinates_lon_lat": [
+        -43.17,
+        -22.9
+      ],
+      "approach_coordinates_lon_lat": [
+        -43.17,
+        -22.9
+      ],
+      "reference_coordinates_lon_lat": [
+        -43.21666666666667,
+        -22.866666666666667
+      ],
+      "distance_to_reference_point_nm": 3.266,
+      "status": "CHECKS_PASSED"
+    },
+    {
+      "port_id": "DEHAM",
+      "port_name": "Hamburg",
+      "supplied_un_locode": "DEHAM",
+      "lookup_code": "DEHAM",
+      "identifier_match": true,
+      "reference_matches": [
+        {
+          "name": "Hamburg",
+          "name_without_diacritics": "Hamburg",
+          "subdivision": "HH",
+          "function": "12345---",
+          "status": "AF",
+          "record_date_code": "2001",
+          "coordinates": "5331N 00956E",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart1.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "issues": [],
+      "coordinates_lon_lat": [
+        9.97,
+        53.54
+      ],
+      "approach_coordinates_lon_lat": [
+        9.97,
+        53.54
+      ],
+      "reference_coordinates_lon_lat": [
+        9.933333333333334,
+        53.516666666666666
+      ],
+      "distance_to_reference_point_nm": 1.917,
+      "status": "CHECKS_PASSED"
+    },
+    {
+      "port_id": "BEANR",
+      "port_name": "Antwerp",
+      "supplied_un_locode": "BEANR",
+      "lookup_code": "BEANR",
+      "identifier_match": true,
+      "reference_matches": [
+        {
+          "name": "Antwerpen",
+          "name_without_diacritics": "Antwerpen",
+          "subdivision": "VAN",
+          "function": "12345---",
+          "status": "AI",
+          "record_date_code": "0307",
+          "coordinates": "5113N 00425E",
+          "change_indicator": "",
+          "file": "UNLOCODE CodeListPart1.csv",
+          "encoding": "utf-8-sig"
+        }
+      ],
+      "issues": [],
+      "coordinates_lon_lat": [
+        4.4,
+        51.26
+      ],
+      "approach_coordinates_lon_lat": [
+        4.4,
+        51.26
+      ],
+      "reference_coordinates_lon_lat": [
+        4.416666666666667,
+        51.21666666666667
+      ],
+      "distance_to_reference_point_nm": 2.676,
+      "status": "CHECKS_PASSED"
+    }
+  ]
+}

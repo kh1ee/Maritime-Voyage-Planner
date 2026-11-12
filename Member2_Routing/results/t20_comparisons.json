@@ -1,0 +1,96 @@
+{
+  "engine": {
+    "name": "searoute-py",
+    "version": "1.6.0",
+    "units": "nautical miles",
+    "default_restrictions": [
+      "northwest"
+    ],
+    "append_orig_dest": false,
+    "network_nodes": 9708,
+    "network_edges": 15970
+  },
+  "comparisons": [
+    {
+      "voyage": "Houston to Tocopilla",
+      "origin": "USHOU",
+      "destination": "CLTOQ",
+      "preset": "panama_vs_cape_horn",
+      "comparison": {
+        "comparison_id": "comparison-83d0f24e58",
+        "status": "success",
+        "distance_difference_nm": 6378.3,
+        "shortest_option": "Via Panama Canal",
+        "warnings": [
+          "Academic estimate; not for navigation.",
+          "Tocopilla is 114.2 nm from the nearest routing-network node; that access distance is not included in distance_nm. Its approach point is pending geographic review (T03).",
+          "The constrained route is more than 50% longer than the unconstrained route; check that the passage constraints are intended."
+        ],
+        "calculation_version": "0.1.0"
+      },
+      "options": [
+        {
+          "route_name": "Via Panama Canal",
+          "required_passage": "PANAMA",
+          "excluded_passage": null,
+          "distance_nm": 3594.3,
+          "passages_used": [
+            "PANAMA"
+          ],
+          "extra_distance_vs_shortest_nm": 0.0
+        },
+        {
+          "route_name": "Via Cape Horn",
+          "required_passage": "CAPE_HORN",
+          "excluded_passage": "PANAMA",
+          "distance_nm": 9972.6,
+          "passages_used": [
+            "CAPE_HORN"
+          ],
+          "extra_distance_vs_shortest_nm": 6378.3
+        }
+      ]
+    },
+    {
+      "voyage": "Rotterdam to Durban",
+      "origin": "NLRTM",
+      "destination": "ZADUR",
+      "preset": "suez_vs_cape_good_hope",
+      "comparison": {
+        "comparison_id": "comparison-fe18098731",
+        "status": "success",
+        "distance_difference_nm": 764.5,
+        "shortest_option": "Via Cape of Good Hope",
+        "warnings": [
+          "Academic estimate; not for navigation.",
+          "Passage point SUEZ is 11.0 nm from the nearest routing-network node; the route passes through that node instead.",
+          "Passage point CAPE_GOOD_HOPE is 29.9 nm from the nearest routing-network node; the route passes through that node instead."
+        ],
+        "calculation_version": "0.1.0"
+      },
+      "options": [
+        {
+          "route_name": "Via Suez Canal",
+          "required_passage": "SUEZ",
+          "excluded_passage": null,
+          "distance_nm": 7943.3,
+          "passages_used": [
+            "GIBRALTAR",
+            "SUEZ"
+          ],
+          "extra_distance_vs_shortest_nm": 764.5
+        },
+        {
+          "route_name": "Via Cape of Good Hope",
+          "required_passage": "CAPE_GOOD_HOPE",
+          "excluded_passage": "SUEZ",
+          "distance_nm": 7178.8,
+          "passages_used": [
+            "CAPE_GOOD_HOPE"
+          ],
+          "extra_distance_vs_shortest_nm": 0.0
+        }
+      ]
+    }
+  ]
+}

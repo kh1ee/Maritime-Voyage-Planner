@@ -1,0 +1,133 @@
+{
+  "task": "T13 initial independent spot-check",
+  "benchmark_id": "BM_002",
+  "workbook": "/Users/brosman/Downloads/Prof Voyage Planner/voyage_planner_datasets.xlsx",
+  "workbook_sha256": "6e3ca0c922f07820d75b6e261bc05e0bb1193ba746a0fc66b49be487a365cb99",
+  "searoute_version": "1.6.0",
+  "configuration": {
+    "units": "naut",
+    "append_orig_dest": false,
+    "include_ports": false,
+    "restrictions": [
+      "northwest"
+    ],
+    "return_passages": true,
+    "algorithm": "dijkstra",
+    "backend": "networkx"
+  },
+  "input_coordinates_lon_lat": [
+    [
+      4.14,
+      51.95
+    ],
+    [
+      9.97,
+      53.54
+    ]
+  ],
+  "calculated_distance_nm": 297.6721503455907,
+  "supplied_expected_distance_nm": 298.0,
+  "supplied_tolerance_nm": 100.0,
+  "absolute_error_against_supplied_nm": 0.3278496544093059,
+  "within_supplied_tolerance": true,
+  "independent_reference": {
+    "publisher": "National Geospatial-Intelligence Agency",
+    "title": "Publication 151, Distances Between Ports",
+    "edition": "11th edition, 2001",
+    "section": "ROTTERDAM, NETHERLANDS, Ports, Hamburg, Germany",
+    "printed_page": 94,
+    "distance_nm": 307.0,
+    "access_date": "2026-11-11",
+    "url": "https://msi.nga.mil/api/publications/download?key=16694076%2FSFH00000%2FPub151bk.pdf&type=view"
+  },
+  "calculated_minus_independent_nm": -9.327849654409306,
+  "absolute_difference_percent_of_independent": 3.0383875095795783,
+  "limitations": [
+    "Direct library diagnostic; the group API and its error handling were not tested.",
+    "The supplied model-derived target remains the acceptance target; Pub. 151 is a separate spot-check.",
+    "Pub. 151 uses different reference points and routing conventions. The cause of the difference is not established.",
+    "Passing BM_002 does not validate the other nine benchmarks or the full service."
+  ],
+  "raw_library_route": {
+    "type": "Feature",
+    "geometry": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          4.151802,
+          51.961827
+        ],
+        [
+          4.069748,
+          51.987629
+        ],
+        [
+          3.9,
+          52
+        ],
+        [
+          4.308389,
+          52.513982
+        ],
+        [
+          4.9,
+          53.5
+        ],
+        [
+          6.384053,
+          53.685507
+        ],
+        [
+          8.25,
+          53.9
+        ],
+        [
+          8.745294,
+          53.909831
+        ],
+        [
+          9.041942,
+          53.874321
+        ],
+        [
+          9.227347,
+          53.877053
+        ],
+        [
+          9.336273,
+          53.840148
+        ],
+        [
+          9.39653,
+          53.775829
+        ],
+        [
+          9.496185,
+          53.710038
+        ],
+        [
+          9.535584,
+          53.633153
+        ],
+        [
+          9.632921,
+          53.583652
+        ],
+        [
+          9.751117,
+          53.55475
+        ],
+        [
+          9.927252,
+          53.545112
+        ]
+      ]
+    },
+    "properties": {
+      "length": 297.6721503455907,
+      "units": "naut",
+      "duration_hours": 12.403006264399613,
+      "traversed_passages": []
+    }
+  }
+}

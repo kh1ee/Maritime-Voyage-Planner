@@ -1,0 +1,250 @@
+{
+  "source": "Member 1 review of 11 November 2026 (T02, T03)",
+  "workbook_sha256_note": "workbook is byte-identical to data/voyage_planner_datasets.xlsx",
+  "snap_review_trigger_nm": 10,
+  "snap_review_trigger_basis": "Analyst-selected triage trigger; not a course tolerance or navigational standard",
+  "searoute_version": "1.6.0",
+  "limitations": [
+    "No land mask, chart, bathymetry, draft, or port-access validation was performed.",
+    "A valid network route and a short snap do not certify a navigable port approach.",
+    "Endpoint snaps are measured to the returned network vertices, with input endpoints not appended.",
+    "Network-only length excludes the input-to-network connector; original inputs are retained.",
+    "All approach_approved flags remain false pending geographic review by the team.",
+    "Raw library geometry can contain unwrapped longitudes at the date line; measurements normalize these, and map rendering needs separate date-line handling."
+  ],
+  "t02_status": {
+    "identifiers_matched": 28,
+    "needs_review": [
+      "CNSHA",
+      "GIIBZ",
+      "PAMIT"
+    ]
+  },
+  "ports": {
+    "SGSIN": {
+      "identifier_in_unlocode_reference": true,
+      "identity_review": null,
+      "approach_snap_nm": 3.404,
+      "approach_snap_review": false,
+      "approach_approved": false
+    },
+    "USHOU": {
+      "identifier_in_unlocode_reference": true,
+      "identity_review": null,
+      "approach_snap_nm": 1.745,
+      "approach_snap_review": false,
+      "approach_approved": false
+    },
+    "NLRTM": {
+      "identifier_in_unlocode_reference": true,
+      "identity_review": null,
+      "approach_snap_nm": 0.834,
+      "approach_snap_review": false,
+      "approach_approved": false
+    },
+    "ZADUR": {
+      "identifier_in_unlocode_reference": true,
+      "identity_review": null,
+      "approach_snap_nm": 7.19,
+      "approach_snap_review": false,
+      "approach_approved": false
+    },
+    "CLTOQ": {
+      "identifier_in_unlocode_reference": true,
+      "identity_review": null,
+      "approach_snap_nm": 114.179,
+      "approach_snap_review": true,
+      "approach_approved": false
+    },
+    "USNYC": {
+      "identifier_in_unlocode_reference": true,
+      "identity_review": null,
+      "approach_snap_nm": 0.845,
+      "approach_snap_review": false,
+      "approach_approved": false
+    },
+    "BRSSZ": {
+      "identifier_in_unlocode_reference": true,
+      "identity_review": null,
+      "approach_snap_nm": 1.624,
+      "approach_snap_review": false,
+      "approach_approved": false
+    },
+    "CNSHA": {
+      "identifier_in_unlocode_reference": true,
+      "identity_review": {
+        "status": "team_decision",
+        "accepted_aliases": [
+          "CNSGH"
+        ],
+        "decision": "CNSGH is accepted as an alias of CNSHA. The UN/LOCODE reference lists CNSHA as the Shanghai Hongqiao airport record; the project keeps CNSHA as the Shanghai key.",
+        "note": "Shanghai: CNSGH is accepted as an alias of CNSHA (the UN/LOCODE reference lists CNSHA as an airport record)."
+      },
+      "approach_snap_nm": 17.204,
+      "approach_snap_review": true,
+      "approach_approved": false
+    },
+    "HKHKG": {
+      "identifier_in_unlocode_reference": true,
+      "identity_review": null,
+      "approach_snap_nm": 14.13,
+      "approach_snap_review": true,
+      "approach_approved": false
+    },
+    "LKCMB": {
+      "identifier_in_unlocode_reference": true,
+      "identity_review": null,
+      "approach_snap_nm": 4.487,
+      "approach_snap_review": false,
+      "approach_approved": false
+    },
+    "INBOM": {
+      "identifier_in_unlocode_reference": true,
+      "identity_review": null,
+      "approach_snap_nm": 1.832,
+      "approach_snap_review": false,
+      "approach_approved": false
+    },
+    "AEFJR": {
+      "identifier_in_unlocode_reference": true,
+      "identity_review": null,
+      "approach_snap_nm": 2.611,
+      "approach_snap_review": false,
+      "approach_approved": false
+    },
+    "EGPSD": {
+      "identifier_in_unlocode_reference": true,
+      "identity_review": null,
+      "approach_snap_nm": 5.519,
+      "approach_snap_review": false,
+      "approach_approved": false
+    },
+    "EGSUZ": {
+      "identifier_in_unlocode_reference": true,
+      "identity_review": null,
+      "approach_snap_nm": 15.234,
+      "approach_snap_review": true,
+      "approach_approved": false
+    },
+    "GIIBZ": {
+      "identifier_in_unlocode_reference": false,
+      "identity_review": {
+        "status": "team_decision",
+        "accepted_aliases": [
+          "GIGIB"
+        ],
+        "decision": "Both GIIBZ (supplied project ID) and GIGIB (UN/LOCODE record) are accepted for Gibraltar.",
+        "note": "Gibraltar: both GIIBZ and GIGIB are accepted; GIIBZ remains the project key."
+      },
+      "approach_snap_nm": 1.774,
+      "approach_snap_review": false,
+      "approach_approved": false
+    },
+    "ESALG": {
+      "identifier_in_unlocode_reference": true,
+      "identity_review": null,
+      "approach_snap_nm": 2.583,
+      "approach_snap_review": false,
+      "approach_approved": false
+    },
+    "ZACPT": {
+      "identifier_in_unlocode_reference": true,
+      "identity_review": null,
+      "approach_snap_nm": 3.458,
+      "approach_snap_review": false,
+      "approach_approved": false
+    },
+    "ZARCB": {
+      "identifier_in_unlocode_reference": true,
+      "identity_review": null,
+      "approach_snap_nm": 50.957,
+      "approach_snap_review": true,
+      "approach_approved": false
+    },
+    "AUFRE": {
+      "identifier_in_unlocode_reference": true,
+      "identity_review": null,
+      "approach_snap_nm": 0.255,
+      "approach_snap_review": false,
+      "approach_approved": false
+    },
+    "AUMEL": {
+      "identifier_in_unlocode_reference": true,
+      "identity_review": null,
+      "approach_snap_nm": 1.32,
+      "approach_snap_review": false,
+      "approach_approved": false
+    },
+    "AUSYD": {
+      "identifier_in_unlocode_reference": true,
+      "identity_review": null,
+      "approach_snap_nm": 0.629,
+      "approach_snap_review": false,
+      "approach_approved": false
+    },
+    "PAPTY": {
+      "identifier_in_unlocode_reference": true,
+      "identity_review": null,
+      "approach_snap_nm": 4.19,
+      "approach_snap_review": false,
+      "approach_approved": false
+    },
+    "PAMIT": {
+      "identifier_in_unlocode_reference": true,
+      "identity_review": {
+        "status": "team_decision",
+        "accepted_aliases": [
+          "Manzanillo"
+        ],
+        "known_as": "Manzanillo",
+        "decision": "PAMIT is treated as Manzanillo (the UN/LOCODE reference name); the workbook name Colon is kept as a supplied alias.",
+        "note": "PAMIT is treated as Manzanillo (UN/LOCODE reference name); the workbook's Colon/Cristobal aliases still work."
+      },
+      "approach_snap_nm": 9.116,
+      "approach_snap_review": false,
+      "approach_approved": false
+    },
+    "CLVAP": {
+      "identifier_in_unlocode_reference": true,
+      "identity_review": null,
+      "approach_snap_nm": 18.781,
+      "approach_snap_review": true,
+      "approach_approved": false
+    },
+    "PECLL": {
+      "identifier_in_unlocode_reference": true,
+      "identity_review": null,
+      "approach_snap_nm": 32.437,
+      "approach_snap_review": true,
+      "approach_approved": false
+    },
+    "ARBUE": {
+      "identifier_in_unlocode_reference": true,
+      "identity_review": null,
+      "approach_snap_nm": 17.229,
+      "approach_snap_review": true,
+      "approach_approved": false
+    },
+    "BRRIO": {
+      "identifier_in_unlocode_reference": true,
+      "identity_review": null,
+      "approach_snap_nm": 2.355,
+      "approach_snap_review": false,
+      "approach_approved": false
+    },
+    "DEHAM": {
+      "identifier_in_unlocode_reference": true,
+      "identity_review": null,
+      "approach_snap_nm": 1.556,
+      "approach_snap_review": false,
+      "approach_approved": false
+    },
+    "BEANR": {
+      "identifier_in_unlocode_reference": true,
+      "identity_review": null,
+      "approach_snap_nm": 7.12,
+      "approach_snap_review": false,
+      "approach_approved": false
+    }
+  }
+}
