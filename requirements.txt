@@ -1,6 +1,17 @@
+# User interface (Member 4)
 streamlit
 pandas
 folium
 streamlit-folium
-searoute
-openpyxl
+openpyxl>=3.1
+
+# Routing engine (Member 2) - pinned: benchmark baselines were generated with 1.6.0
+searoute==1.6.0
+
+# API (Member 3)
+fastapi>=0.110
+uvicorn>=0.27
+
+# Tests
+pytest>=7
+httpx
